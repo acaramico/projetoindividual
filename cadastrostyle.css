@@ -7,7 +7,7 @@
     margin: 173px auto 0;
     text-align: center;
     box-shadow: 0px 1px 10px #ffffff;
-    background-color: #8d75cfd4;
+    background-color: #8d75cfbf;
 }
 .titulo{
     text-align: center;
@@ -100,6 +100,7 @@ input#input_senha_check {
 input#in_uf {
     margin-left: 6px;
     margin-right: -44px;
+    text-transform: uppercase;
 }
 div#senha_incorreta {
     margin: -43px 330px 0px 0px;
@@ -108,4 +109,7 @@ div#senha_incorreta {
 div#div_mens_cep {
     margin: -19px -315px -10px 1px;
     text-shadow: 0 0 2px #dc3131;
+}
+#in_uf::placeholder{
+    text-transform: none;
 }

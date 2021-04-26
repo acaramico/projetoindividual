@@ -171,8 +171,16 @@
             senha_incorreta.innerHTML = ' '
         }
     }
-    function validar_senha2()
     
-    
+    function validar_senha2(){
+        var senha = input_senha.value
+        if (senha.length<7) {
+        senha_incorreta.innerHTML = 'A senha deve ter no mínimo 8 caracteres'
+        }
+        else{
+            senha_incorreta.innerHTML = ' '
+        }
+    }
+   
     
 </script>
