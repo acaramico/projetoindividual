@@ -3,16 +3,17 @@
 
 .saudacao{
     font-weight: bolder;
-    margin-top: 180px;
+    margin-top: 300px;
     font-size: 52px;
-    color: #fe593b;
+    color: #fff;
     font-family: 'Palanquin Dark', sans-serif;
+    text-shadow: 0px 0px 20px #e1afe2;
 }
 .subtitulo{
     font-family: 'Palanquin Dark', sans-serif;
     margin-top: -15px;
     font-size: 19px;
-    color: #2e112d;
+    color: #fff;
 
 }
 
@@ -23,19 +24,20 @@
 .botao{
     text-decoration: none;
     display: block;
-    background-color: #c92a3e;
-    border-radius: 9px;
+    background-color: #673ab7;
+    border-radius: 15px;
     width: max-content;
     font-weight: bolder;
     margin: 0 auto;
-    color: white;
+    color: #ffffff;
     margin-top: 27px;
     font-family: 'Palanquin Dark', sans-serif;
     font-size: 19px;
-    padding-left: 14px;
-    padding-right: 14px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    box-shadow: 0 0 13px 0px #c69dc0;
 }
 
 body{
@@ -44,7 +46,7 @@ body{
     background-size: contain;
     min-height: 200vh;
     background-repeat: no-repeat;
-    background-color: #2e112d;
+    background-color: #0f0d3e;
 }
 .creditos{
     justify-content: space-evenly;
@@ -74,7 +76,7 @@ body{
     font-size: 14px;
 }
 .img_creditos img{
-    height: 33px;
+    height: 29px;
     margin-top: 17px;
     margin-bottom: -13px;
 }

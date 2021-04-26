@@ -5,10 +5,9 @@
 
 }
 .header{
-    background-color: #6cdce8;
-    color: whitesmoke;
+    background-color: transparent;
+    color: #000000;
     padding: 10px;
-    border-bottom: solid #fd7b50 3px;
 
 }
 .header > .container{
@@ -29,7 +28,7 @@
 }
 .header a{
     text-decoration: none;
-    color: white;
+    color: #000000;
     font-weight: bold;
 }
 
@@ -38,7 +37,7 @@
 }
 
 body{
-    background-image: url(fundolbts.png);
+    background-image: url(fundobtsb.jpg);
     background-position: center;
     background-size: cover;
     min-height: 100vh;
@@ -48,10 +47,11 @@ body{
     line-height: 45px;
     padding-bottom: 10px;
     font-size: 35px;
+    text-shadow: 0px 0px 7px #c8b5fb;
 }
 .logo{
-    width: 32px;
-    margin-bottom: 4px;
+    width: 30px;
+    margin-bottom: 8px;
     margin-right: 10px;
 }
 .left{

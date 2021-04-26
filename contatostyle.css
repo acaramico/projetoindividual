@@ -4,25 +4,26 @@ body{
 }
 
 .conteudo{
-    border: solid #fd7b50 5px;
-    border-radius: 10px;
+    border-radius: 12px;
     max-width: fit-content;
     padding: 28px;
     margin: 173px auto 0;
     text-align: center;
-    box-shadow: 0px 1px 10px #fd7b50;
-    background-color: #fedbc7;
+    box-shadow: 0px 1px 10px 1px #ffffff;
+    background-color: #a58bde;
 }
 .titulo{
     text-align: center;
-    font-size: 28px;
+    font-size: 27px;
     font-weight: bolder;
+    text-decoration: underline;
+    text-decoration-color: #5428b3;
     
 }
 .botao_enviar{
     text-decoration: none;
     display: block;
-    background-color: #7c0033;
+    background-color: #5428b3;
     border-radius: 9px;
     width: max-content;
     font-weight: bolder;
@@ -36,9 +37,9 @@ body{
     padding-top: 0px;
     padding-bottom: 3px;
     cursor: pointer;
-    box-shadow: 0 0 10px #c7293f;
-    margin-top: 78px;
-    border: solid 1px #7c0033;
+    box-shadow: 0 0 10px 0px #e7dcff;
+    margin-top: 58px;
+    border: solid 1px #5428b3;
 
 }
 .primeiro_bloco{
@@ -59,9 +60,9 @@ body{
     
 }
 input, textarea{
-    border: solid 2px #7c0033;
+    border: solid 2px #5428b3;
     border-radius: 3px;
-    box-shadow: -5px -5px #7c0033;
+    box-shadow: -5px -5px #5428b3;
 }
 .creditos{
     justify-content: space-evenly;
@@ -92,7 +93,7 @@ input, textarea{
     font-size: 14px;
 }
 .img_creditos img{
-    height: 33px;
+    height: 29px;
     margin-top: 17px;
     margin-bottom: -13px;
 }
