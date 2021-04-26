@@ -7,7 +7,7 @@
     margin: 173px auto 0;
     text-align: center;
     box-shadow: 0px 1px 10px #ffffff;
-    background-color: #a58bde;
+    background-color: #8d75cfd4;
 }
 .titulo{
     text-align: center;
@@ -24,7 +24,7 @@
     border-radius: 9px;
     width: max-content;
     font-weight: bolder;
-    margin: 7px auto;
+    margin: 32px 85px 10px 105px !important;
     color: white;
     font-family: 'Palanquin Dark', sans-serif;
     font-size: 18px;
@@ -43,7 +43,7 @@ body{
     backdrop-filter: blur(5px);
 }
 form.campos input {
-    width: 46%;
+    width: 37%;
     margin-bottom: 22px;
     border: solid 2px #5428b3;
     border-radius: 3px;
@@ -52,10 +52,11 @@ form.campos input {
 
 form.campos {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     max-width: 640px;
     padding: 20px;
+    align-items: flex-start;
+    justify-content: space-around;
 }
 
 .creditos{
@@ -89,4 +90,22 @@ form.campos {
     height: 29px;
     margin-top: 17px;
     margin-bottom: -13px;
+}
+#in_uf , #in_num{
+    width: 99px;
+}
+input#input_senha_check {
+    margin-left: 17px;
+}
+input#in_uf {
+    margin-left: 6px;
+    margin-right: -44px;
+}
+div#senha_incorreta {
+    margin: -43px 330px 0px 0px;
+    text-shadow: 0 0 2px #dc3131;
+}
+div#div_mens_cep {
+    margin: -19px -315px -10px 1px;
+    text-shadow: 0 0 2px #dc3131;
 }

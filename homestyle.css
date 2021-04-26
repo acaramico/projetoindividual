@@ -19,6 +19,7 @@
 
 .textoprincipal{
     text-align: center;
+    margin-bottom: 249px;
     
 }
 .botao{
@@ -33,10 +34,10 @@
     margin-top: 27px;
     font-family: 'Palanquin Dark', sans-serif;
     font-size: 19px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     box-shadow: 0 0 13px 0px #c69dc0;
 }
 
@@ -53,8 +54,8 @@ body{
     height: 81px;
     display: flex;
     padding-bottom: 13px;
-    padding-top: 1380px;
-    margin-left: -132px;
+    padding-top: 226px;
+    margin-left: -111px;
     color: #949494;
 }
 
@@ -79,4 +80,83 @@ body{
     height: 29px;
     margin-top: 17px;
     margin-bottom: -13px;
+}
+
+
+
+.fotos {
+    
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    display: flex;
+    justify-content: space-around;
+   
+}
+img{
+    max-width: 96%;
+}
+.fotos .item {
+    width: calc(100%/3 - 34px);
+}
+.fotos .item .card {
+    background-color: #faf9fc;
+    padding: 20px;
+    border-radius: 12px;
+    height: calc(100% - 40px);
+    box-shadow: -1px 1px 20px 0px #673ab7;
+}
+.titulo{
+    text-align: center;
+    font-size: 32px;
+    font-weight: bolder;
+    margin:10px 0 60px;
+    color: #fff;
+    text-shadow: -4px -4px 3px #321f6e;
+
+}
+.conteudo {
+    padding-top: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.fotos .item .card img {
+    border-radius: 4px;
+    height: 293px;
+}
+.fotos .item .card span {
+    display: block;
+    margin: 11px 0px;
+    font-family: 'Palanquin', sans-serif;
+    padding: 6px;
+    letter-spacing: 1px;
+    margin-left: 10px;
+}
+.frequencia{
+    font-size: 22px;
+    margin-left: 102px !important;
+    font-family: 'Palanquin Dark', sans-serif !important;
+    text-decoration: underline;
+    text-decoration-color: #673ab7;
+}
+.botao2{
+    text-decoration: none;
+    display: block;
+    background-color: #673ab7;
+    border-radius: 15px;
+    width: max-content;
+    font-weight: bolder;
+    color: #ffffff;
+    margin-top: 95px;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 19px;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    box-shadow: -1px 1px 8px 0px #673ab7;
+    margin: 39px 100px 10px;
 }

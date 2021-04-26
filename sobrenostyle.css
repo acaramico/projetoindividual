@@ -24,15 +24,17 @@ img{
     padding: 20px;
     border-radius: 12px;
     height: calc(100% - 40px);
-    border: solid 3px #fe583d;
-    box-shadow: -1px 1px 10px 0px #fe583d;
+    border: solid 3px #5428b3;
+    box-shadow: -1px 1px 10px 0px #5428b3;
 }
 .titulo{
     text-align: center;
     font-size: 32px;
     font-weight: bolder;
-    margin:0 0 35px;
-    text-decoration: underline #fe583d;
+    margin: 0 0 35px;
+    text-decoration: underline #5428b3;
+    color: white;
+    text-shadow: 0 0 20px #c580c6;
 
 }
 .conteudo {
@@ -50,6 +52,8 @@ img{
     font-family: 'Palanquin', sans-serif;
     padding: 6px;
 }
+
+
 .creditos{
     justify-content: space-evenly;
     height: 80px;
