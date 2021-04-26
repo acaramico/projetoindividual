@@ -1,0 +1,83 @@
+
+
+.conteudo{
+    border: solid #fd7b50  5px;
+    border-radius: 10px;
+    max-width: fit-content;
+    padding: 28px;
+    margin: 173px auto 0;
+    text-align: center;
+    box-shadow: 0px 1px 10px #fd7b50;
+    background-color: #fedbc7;
+}
+.titulo{
+    text-align: center;
+    font-size: 27px;
+    font-weight: bolder;
+    text-decoration: underline;
+    text-decoration-color: #7c0033;
+}
+.botaoentrar{
+    text-decoration: none;
+    display: block;
+    background-color: #7c0033;
+    border-radius: 9px;
+    width: max-content;
+    font-weight: bolder;
+    margin: 14px auto;
+    color: white;
+    margin-top: 20px;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 0px;
+    padding-bottom: 3px;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0px #fe593d;
+    margin-top: 58px;
+    border: solid 1px #7c0033;
+    margin-bottom: 25px;
+}
+body{
+    
+    backdrop-filter: blur(5px);
+}
+input{
+    border: solid 2px #7c0033;
+    border-radius: 3px;
+    box-shadow: -4px -4px #7c0033;
+}
+.creditos{
+    justify-content: space-evenly;
+    height: 81px;
+    display: flex;
+    padding-bottom: 13px;
+    padding-top: 250px;
+    margin-left: -132px;
+    color: #949494;
+}
+
+.creditos a{
+    color: #949494;
+}
+.contato_creditos{
+    width: fit-content;
+    text-align: center;
+}
+.img_creditos{
+    width: fit-content;
+    height: fit-content;
+    margin-top: -31px;
+    text-align: center;
+}
+.direitos_span{
+    margin-top: -11px;
+    font-size: 14px;
+}
+.img_creditos img{
+    height: 33px;
+    margin-top: 17px;
+    margin-bottom: -13px;
+}

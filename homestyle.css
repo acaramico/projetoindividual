@@ -1,0 +1,80 @@
+
+
+
+.saudacao{
+    font-weight: bolder;
+    margin-top: 180px;
+    font-size: 52px;
+    color: #fe593b;
+    font-family: 'Palanquin Dark', sans-serif;
+}
+.subtitulo{
+    font-family: 'Palanquin Dark', sans-serif;
+    margin-top: -15px;
+    font-size: 19px;
+    color: #2e112d;
+
+}
+
+.textoprincipal{
+    text-align: center;
+    
+}
+.botao{
+    text-decoration: none;
+    display: block;
+    background-color: #c92a3e;
+    border-radius: 9px;
+    width: max-content;
+    font-weight: bolder;
+    margin: 0 auto;
+    color: white;
+    margin-top: 27px;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 19px;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+body{
+    
+    background-position: center -10vh;
+    background-size: contain;
+    min-height: 200vh;
+    background-repeat: no-repeat;
+    background-color: #2e112d;
+}
+.creditos{
+    justify-content: space-evenly;
+    height: 81px;
+    display: flex;
+    padding-bottom: 13px;
+    padding-top: 1380px;
+    margin-left: -132px;
+    color: #949494;
+}
+
+.creditos a{
+    color: #949494;
+}
+.contato_creditos{
+    width: fit-content;
+    text-align: center;
+}
+.img_creditos{
+    width: fit-content;
+    height: fit-content;
+    margin-top: -31px;
+    text-align: center;
+}
+.direitos_span{
+    margin-top: -11px;
+    font-size: 14px;
+}
+.img_creditos img{
+    height: 33px;
+    margin-top: 17px;
+    margin-bottom: -13px;
+}

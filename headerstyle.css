@@ -1,0 +1,60 @@
+*{
+    font-family: 'Palanquin Dark', sans-serif;
+    margin: 0;
+    
+
+}
+.header{
+    background-color: #6cdce8;
+    color: whitesmoke;
+    padding: 10px;
+    border-bottom: solid #fd7b50 3px;
+
+}
+.header > .container{
+    margin: auto;
+    max-width: 1170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header li{
+    display: inline-block;
+    
+}
+.header ul{
+    list-style: none;
+    font-size: 18px;
+    
+}
+.header a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.header ul a {
+    padding: 15px;
+}
+
+body{
+    background-image: url(fundolbts.png);
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+.header h1{
+    font-family: 'Palanquin Dark', sans-serif;
+    line-height: 45px;
+    padding-bottom: 10px;
+    font-size: 35px;
+}
+.logo{
+    width: 32px;
+    margin-bottom: 4px;
+    margin-right: 10px;
+}
+.left{
+    display: flex;
+    align-items: center;
+}
