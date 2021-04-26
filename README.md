@@ -1,2 +1,4 @@
 # projetoindividual
-Projeto Individual 
+Amanda Caramico
+Pesquisa e Inovação
+RA 02211001
