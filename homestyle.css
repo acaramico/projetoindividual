@@ -93,7 +93,7 @@ body{
     margin-right: auto!important;
     display: flex;
     justify-content: space-around;
-   
+    position: relative;
 }
 img{
     max-width: 96%;
@@ -159,4 +159,7 @@ img{
     padding-bottom: 6px;
     box-shadow: -1px 1px 8px 0px #673ab7;
     margin: 39px 100px 10px;
+}
+.absolute{
+    position: absolute;
 }
