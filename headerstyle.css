@@ -58,3 +58,21 @@ body{
     display: flex;
     align-items: center;
 }
+.header .active{
+    color: white;
+    position: relative;
+}
+.header .active::before{
+    content: "";
+    background-image: url(doodle7.png);
+    height: 26px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

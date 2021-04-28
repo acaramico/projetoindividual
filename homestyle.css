@@ -102,7 +102,7 @@ img{
     width: calc(100%/3 - 34px);
 }
 .fotos .item .card {
-    background-color: #faf9fc;
+    background-color: #fefefe;
     padding: 20px;
     border-radius: 12px;
     height: calc(100% - 40px);
@@ -140,12 +140,12 @@ img{
     margin-left: 102px !important;
     font-family: 'Palanquin Dark', sans-serif !important;
     text-decoration: underline;
-    text-decoration-color: #673ab7;
+    text-decoration-color: #5428b3;
 }
 .botao2{
     text-decoration: none;
     display: block;
-    background-color: #673ab7;
+    background-color: #5428b3;
     border-radius: 15px;
     width: max-content;
     font-weight: bolder;
@@ -157,9 +157,35 @@ img{
     padding-right: 17px;
     padding-top: 6px;
     padding-bottom: 6px;
-    box-shadow: -1px 1px 8px 0px #673ab7;
+    box-shadow: -1px 1px 8px 0px #5428b3;
     margin: 39px 100px 10px;
 }
 .absolute{
     position: absolute;
+}
+.lua{
+    left: 1200px;
+    height: 100px;
+    top: 600px;
+}
+.estrela3{
+    top: 39px;
+    height: 51px;
+    left: -188px;
+}
+
+.estrela2{
+    height: 41px;
+    top: -17px;
+    left: -43px;
+}
+
+.estrela1{
+    height: 46px;
+    left: -135px;
+    top: -83px;
+}
+.bt7{
+    height: 94px;
+    right: 69px;
 }

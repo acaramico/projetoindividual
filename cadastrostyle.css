@@ -8,14 +8,14 @@
     text-align: center;
     box-shadow: 0px 1px 10px #ffffff;
     background-color: #8d75cfbf;
+    position: relative;
 }
 .titulo{
     text-align: center;
     font-size: 27px;
     font-weight: bolder;
     margin-bottom: 40px;
-    text-decoration: underline;
-    text-decoration-color: #5428b3;
+    text-shadow: -2px -2px #5428b3bd;
 }
 .botaoentrar{
     text-decoration: none;
@@ -112,4 +112,27 @@ div#div_mens_cep {
 }
 #in_uf::placeholder{
     text-transform: none;
+}
+.bt7{
+    position: absolute;
+    height: 94px;
+    right: 75px;
+}
+.bt1{
+    position: absolute;
+    height: 80px;
+    top: 457px;
+    right: 262px;
+}
+.doodle5{
+    position: absolute;
+    height: 82px;
+    left: -29px;
+    top: -24px;
+}
+.doodle7{
+    position: absolute;
+    height: 29px;
+    top: 65px;
+    left: 287px;
 }

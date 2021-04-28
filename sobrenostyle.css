@@ -14,16 +14,16 @@ body{
    
 }
 img{
-    max-width: 96%;
+    max-width: 99%;
 }
 .fotos .item {
     width: calc(100%/3 - 34px);
 }
 .fotos .item .card {
-    background-color: #ffffff;
-    padding: 20px;
+    background-color: #f3f3f3;
+    padding: 10px;
     border-radius: 12px;
-    height: calc(100% - 40px);
+    height: calc(100% - 30px);
     border: solid 3px #5428b3;
     box-shadow: -1px 1px 10px 0px #5428b3;
 }
@@ -33,25 +33,21 @@ img{
     font-weight: bolder;
     margin: 0 0 35px;
     text-decoration: underline #5428b3;
-    color: white;
-    text-shadow: 0 0 20px #c580c6;
-
+    text-shadow: 3px 2px #5428b382;
 }
 .conteudo {
     min-height: calc(100vh - 78px);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 }
 .fotos .item .card img {
     border-radius: 4px;
+    max-width: 104%;
+    margin-left: -9px;
 }
-.fotos .item .card span {
-    display: block;
-    margin: 18px 0px;
-    font-family: 'Palanquin', sans-serif;
-    padding: 6px;
-}
+
 
 
 .creditos{
@@ -84,4 +80,21 @@ img{
     height: 29px;
     margin-top: 17px;
     margin-bottom: -13px;
+}
+.bt7{
+    position: absolute;
+    height: 94px;
+    right: 75px;
+}
+.bt5{
+    position: absolute;
+    height: 83px;
+    top: 134px;
+    right: 404px;
+}
+.bt4{
+    position: absolute;
+    height: 81px;
+    top: 136px;
+    left: 378px;
 }
