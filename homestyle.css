@@ -29,9 +29,8 @@
     border-radius: 15px;
     width: max-content;
     font-weight: bolder;
-    margin: 0 auto;
+    margin: 2px auto 46px;
     color: #ffffff;
-    margin-top: 27px;
     font-family: 'Palanquin Dark', sans-serif;
     font-size: 19px;
     padding-left: 17px;
@@ -86,24 +85,19 @@ body{
 
 .fotos {
     
-    max-width: 1200px;
+    width: 1200px;
+    max-width: 100%;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto!important;
     margin-right: auto!important;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     position: relative;
-}
-img{
-    max-width: 96%;
-}
-.fotos .item {
-    width: calc(100%/3 - 34px);
 }
 .fotos .item .card {
     background-color: #fefefe;
-    padding: 20px;
+    padding: 11px;
     border-radius: 12px;
     height: calc(100% - 40px);
     box-shadow: -1px 1px 20px 0px #673ab7;
@@ -125,41 +119,9 @@ img{
 }
 .fotos .item .card img {
     border-radius: 4px;
-    height: 293px;
+    width: 100%;
 }
-.fotos .item .card span {
-    display: block;
-    margin: 11px 0px;
-    font-family: 'Palanquin', sans-serif;
-    padding: 6px;
-    letter-spacing: 1px;
-    margin-left: 10px;
-}
-.frequencia{
-    font-size: 22px;
-    margin-left: 102px !important;
-    font-family: 'Palanquin Dark', sans-serif !important;
-    text-decoration: underline;
-    text-decoration-color: #5428b3;
-}
-.botao2{
-    text-decoration: none;
-    display: block;
-    background-color: #5428b3;
-    border-radius: 15px;
-    width: max-content;
-    font-weight: bolder;
-    color: #ffffff;
-    margin-top: 95px;
-    font-family: 'Palanquin Dark', sans-serif;
-    font-size: 19px;
-    padding-left: 17px;
-    padding-right: 17px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    box-shadow: -1px 1px 8px 0px #5428b3;
-    margin: 39px 100px 10px;
-}
+
 .absolute{
     position: absolute;
 }
@@ -188,4 +150,17 @@ img{
 .bt7{
     height: 94px;
     right: 69px;
+}
+.van{
+    position: absolute;
+    height: 80px;
+    right: -15px;
+    top: -83px;
+}
+.fotos .item:not(:last-child) {
+    margin-right: 6%;
+}
+
+.fotos .item {
+    width: 30%;
 }
