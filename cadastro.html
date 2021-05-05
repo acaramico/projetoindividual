@@ -51,11 +51,11 @@
 
             <input required placeholder=" Logradouro" name="rua" type="text" id="rua" />
 
-            <input required id="input_tel" placeholder=" Telefone">
+            <input required id="input_tel" placeholder=" Telefone celular" onkeypress="$(this).mask('(00)00000-0000')">
                 
             <input required placeholder=" Bairro" name="bairro" type="text" id="bairro"/>
 
-            <input required id="input_cnpj" placeholder=" CPF">
+            <input required id="input_cnpj" placeholder=" CPF" onkeypress="$(this).mask('000.000.000-00')">
                 
             <input required placeholder=" Cidade" name="cidade" type="text" id="cidade"/>
 
@@ -66,6 +66,8 @@
             <input required placeholder=" Número" maxlength="10" name="num" id="in_num" size="5">
         
             <input required type="password" id="input_senha_check" placeholder=" Repita sua senha" onchange="validar_senha()">
+
+            <input required type="date" id="inpu_datanasc" placeholder="Data de Nascimento">
             
             <button class="botaoentrar" type="submit">
                 Cadastrar
