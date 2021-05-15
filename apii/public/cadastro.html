@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cadastro</title>
+    <link rel="icon" href="fotos/logobts.png">
+    <link rel="stylesheet" href="cadastrostyle.css">
+    <link rel="stylesheet" href="headerstyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        
+        <div class="container">
+            <a class="left" href="home.html">
+                <img src="fotos/logobts.png" class="logo">
+                <h1>BTS Box</h1>
+            </a>
+            
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobrenos.html">Como funciona</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a class="active" href="login.html">Minha Conta</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="formulario" class="conteudo">
+        <div class="titulo">Cadastro</div>
+        <img class="bt1" src="fotos/bt1.png">
+        <img src="fotos/doodle5.png" class="doodle5">
+        <img src="fotos/doodle7.png" class="doodle7">
+        <img src="fotos/doodle6.png" class="doodle6" id="doodle" style="display: none;">
+        <div style="display: none;" id="div_mens_cep">Formato do CEP inválido</div>
+        <form class="campos" id="form_cadastro" onsubmit="return cadastrar()"method="post">
+            <input required id="input_nome" placeholder=" Nome Completo"name="nome">
+
+            <form method="get"  action="." >
+            
+            <input required placeholder=" CEP" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                       onblur="pesquisacep(this.value);" />
+
+            <input required id="input_email" type="email" placeholder=" E-mail" name="login">
+
+            <input required placeholder=" Logradouro" name="rua" type="text" id="rua" />
+
+            <input required id="input_tel" placeholder=" Telefone celular" onkeypress="$(this).mask('(00)00000-0000')">
+                
+            <input required placeholder=" Bairro" name="bairro" type="text" id="bairro"/>
+
+            <input required id="input_cnpj" placeholder=" CPF" onkeypress="$(this).mask('000.000.000-00')">
+                
+            <input required placeholder=" Cidade" name="cidade" type="text" id="cidade"/>
+
+            <input required onchange="validar_senha2()" type="password" id="input_senha" placeholder=" Senha" name="senha">
+                
+            <input required placeholder="  Estado"  name="uf" maxlength="2" type="text" id="in_uf" size="2" />
+           
+            <input required placeholder=" Número" maxlength="10" name="num" id="in_num" size="5" type="number">
+        
+            <input required type="password" id="input_senha_check" placeholder=" Repita sua senha" onchange="validar_senha()">
+
+            <input required type="date" id="inpu_datanasc" placeholder="Data de Nascimento">
+            
+            <button  id="btn_entrar" class="botaoentrar" type="submit" value="Cadastrar">
+                Cadastrar
+            </button>
+            <div  id="senha_incorreta"></div>
+            <div style="margin-bottom: -33px;margin-right: 326px;" id="div_erro" class="div_erro">
+            </div>
+            
+        </form>
+    </div>
+    
+    <div class="creditos" >
+        <div class="img_creditos">
+            <img src="fotos/logobranco.png">
+            <br>
+            <b>BTS Box</b>
+            <br>
+            <div class="direitos_span">© 2021 - Direitos reservados</div>
+        </div>
+    
+        <div class="contato_creditos">
+            <a href="contato.html" >Fale Conosco</a><br>
+            (13) 1306-2013
+
+        </div>
+        <div class="redes_creditos" style="margin-top: 12px;" >
+            <img src="fotos/instagram-logo.png" style="height: 30px; cursor: pointer; ">
+            <img src="fotos/linkedin.png" style="height: 30px;margin-left: 4px; cursor: pointer; ">
+
+        </div>
+        <img class="bt7 absolute" src="fotos/bt7.png">
+    </div>
+
+    
+</body>
+</html>
+<script>
+   function limpa_formulário_cep() {
+        document.getElementById('rua').value=("");
+        document.getElementById('bairro').value=("");
+        document.getElementById('cidade').value=("");
+        document.getElementById('in_uf').value=("");
+        div_mens_cep.style.display='none'
+    }
+
+    function meu_callback(conteudo) {
+    if (!("erro" in conteudo)) {
+        document.getElementById('rua').value=(conteudo.logradouro);
+        document.getElementById('bairro').value=(conteudo.bairro);
+        document.getElementById('cidade').value=(conteudo.localidade);
+        document.getElementById('in_uf').value=(conteudo.uf);
+        div_mens_cep.style.display='none'
+    }
+    else {
+        limpa_formulário_cep();
+        div_mens_cep.style.display='block';
+        }
+    }
+
+    function pesquisacep(valor) {
+
+        //Nova variável "cep" somente com dígitos.
+        var cep = valor.replace(/\D/g, '');
+
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+
+        //Expressão regular para validar o CEP.
+        var validacep = /^[0-9]{8}$/;
+
+        //Valida o formato do CEP.
+        if(validacep.test(cep)) {
+
+            document.getElementById('cep').value = cep.substring(0,5)
+            +"-"
+            +cep.substring(5);
+
+            //Preenche os campos com "..." enquanto consulta webservice.
+            document.getElementById('rua').value="...";
+            document.getElementById('bairro').value="...";
+            document.getElementById('cidade').value="...";
+            document.getElementById('in_uf').value="...";
+            div_mens_cep.style.display='none'
+
+            //Cria um elemento javascript.
+            var script = document.createElement('script');
+
+            //Sincroniza com o callback.
+            script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+            //Insere script no documento e carrega o conteúdo.
+            document.body.appendChild(script);
+         }
+
+        else {
+            limpa_formulário_cep();
+            div_mens_cep.style.display= 'block';
+        }
+    } 
+    else {
+        limpa_formulário_cep();
+    }
+};
+
+    function validar_senha(){
+        var senha1 = input_senha.value
+        var senha2 = input_senha_check.value
+        if (senha1 != senha2) {
+            senha_incorreta.innerHTML = 'As senhas não coincidem'
+        }
+        else{
+            senha_incorreta.innerHTML = ' '
+        }
+    }
+    
+    function validar_senha2(){
+        var senha = input_senha.value
+        if (senha.length<7) {
+        senha_incorreta.innerHTML = 'A senha deve ter no mínimo 8 caracteres'
+        }
+        else{
+            senha_incorreta.innerHTML = ' '
+        }
+    }
+    function cadastrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+                div_erro.display = 'block'
+                doodle.style.display = 'block'
+                div_erro.innerHTML = 'Cadastro realizado com sucesso!'
+                //window.location.href='login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.display = 'block'
+                    boodle.display = 'block'
+                    div_erro.innerHTML = 'Erro ao realizar cadastro!'
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        
+        div_erro.style.display='block';
+        doodle.display = 'block'
+        
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        
+        div_erro.style.display='block';
+        doodle.display = 'block'
+    }
+    
+</script>

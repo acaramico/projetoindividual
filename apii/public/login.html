@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça seu login</title>
+    <link rel="icon" href="fotos/logobts.png">
+    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="stylesheet" href="headerstyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        
+        <div class="container">
+            <a class="left" href="home.html">
+                <img src="fotos/logobts.png" class="logo">
+                <h1>BTS Box</h1>
+            </a>
+            
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobrenos.html">Como funciona</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a class="active" href="login.html">Minha Conta</a></li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <div id="formulario" class="conteudo">
+        <div class="titulo">Login</div>
+        <form class="campos" id="form_login" method="POST" onsubmit="return entrar()">
+            
+            <br>
+            <input style="border: solid #5428b3 2px;" id="input_email" type="text" placeholder=" E-mail" name="login" >
+            <br>
+            
+            <br>
+            <input style="border: solid #5428b3 2px;margin-bottom: 16px;" type="password" id="input_senha" name="senha" placeholder=" Senha">
+            <br><br>
+            <div class="forgotpass">
+                <a href=""><u style="color: rgb(0, 0, 0);">Esqueceu sua senha?</u> </a> 
+            </div>
+            <div id="div_erro" class="div_erro" >
+                aaa
+            </div>
+            <button id="btn_entrar" type="submit" class="botaoentrar">
+                Entrar
+            </button>
+            <span style="color: rgb(0, 0, 0);">Ainda não possui uma conta? <a href="cadastro.html"><u style="color: rgb(0, 0, 0);"> Cadastre-se aqui</u></a></span> 
+        </form>
+        <img src="fotos/bt2.png" class="bt2">
+        <img src="fotos/doodle6.png" class="doodle6">
+        <img src="fotos/doodle3.png" class="doodle3">
+    </div>
+    
+    
+    <div class="creditos" >
+        
+        <div class="img_creditos">
+            <img src="fotos/logobranco.png">
+            <br>
+            <b>BTS Box</b>
+            <br>
+            <div class="direitos_span">© 2021 - Direitos reservados</div>
+        </div>
+    
+        <div class="contato_creditos">
+            <a href="contato.html" >Fale Conosco</a><br>
+            (13) 1306-2013
+
+        </div>
+        <div class="redes_creditos" style="margin-top: 12px;" >
+            <img src="fotos/instagram-logo.png" style="height: 30px; cursor: pointer; ">
+            <img src="fotos/linkedin.png" style="height: 30px;margin-left: 4px; cursor: pointer; ">
+
+        </div>
+        <img class="bt7 absolute" src="fotos/bt7.png">
+    </div>
+
+
+
+</body>
+</html>
+<script>
+    
+    function entrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'conta.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.visibility = 'visible';
+        div_erro.style.visibility = 'hidden';
+    }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        img_aguarde.style.visibility = 'hidden';
+        div_erro.style.visibility = 'visible';
+        div_erro.innerHTML = resposta;
+    }
+</script>

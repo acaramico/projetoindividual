@@ -1,0 +1,166 @@
+
+
+
+.saudacao{
+    font-weight: bolder;
+    margin-top: 300px;
+    font-size: 52px;
+    color: #fff;
+    font-family: 'Palanquin Dark', sans-serif;
+    text-shadow: 0px 0px 20px #e1afe2;
+}
+.subtitulo{
+    font-family: 'Palanquin Dark', sans-serif;
+    margin-top: -15px;
+    font-size: 19px;
+    color: #fff;
+
+}
+
+.textoprincipal{
+    text-align: center;
+    margin-bottom: 249px;
+    
+}
+.botao{
+    text-decoration: none;
+    display: block;
+    background-color: #673ab7;
+    border-radius: 15px;
+    width: max-content;
+    font-weight: bolder;
+    margin: 2px auto 46px;
+    color: #ffffff;
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 19px;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    box-shadow: 0 0 13px 0px #c69dc0;
+}
+
+body{
+    
+    background-position: center -10vh;
+    background-size: contain;
+    min-height: 200vh;
+    background-repeat: no-repeat;
+    background-color: #0f0d3e;
+}
+.creditos{
+    justify-content: space-evenly;
+    height: 81px;
+    display: flex;
+    padding-bottom: 13px;
+    padding-top: 226px;
+    margin-left: -111px;
+    color: #949494;
+}
+
+.creditos a{
+    color: #949494;
+}
+.contato_creditos{
+    width: fit-content;
+    text-align: center;
+}
+.img_creditos{
+    width: fit-content;
+    height: fit-content;
+    margin-top: -31px;
+    text-align: center;
+}
+.direitos_span{
+    margin-top: -11px;
+    font-size: 14px;
+}
+.img_creditos img{
+    height: 29px;
+    margin-top: 17px;
+    margin-bottom: -13px;
+}
+
+
+
+.fotos {
+    
+    width: 1200px;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.fotos .item .card {
+    background-color: #fefefe;
+    padding: 11px;
+    border-radius: 12px;
+    height: calc(100% - 40px);
+    box-shadow: -1px 1px 20px 0px #673ab7;
+}
+.titulo{
+    text-align: center;
+    font-size: 32px;
+    font-weight: bolder;
+    margin:10px 0 60px;
+    color: #fff;
+    text-shadow: -4px -4px 3px #321f6e;
+
+}
+.conteudo {
+    padding-top: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.fotos .item .card img {
+    border-radius: 4px;
+    width: 100%;
+}
+
+.absolute{
+    position: absolute;
+}
+.lua{
+    left: 1200px;
+    height: 100px;
+    top: 600px;
+}
+.estrela3{
+    top: 39px;
+    height: 51px;
+    left: -188px;
+}
+
+.estrela2{
+    height: 41px;
+    top: -17px;
+    left: -43px;
+}
+
+.estrela1{
+    height: 46px;
+    left: -135px;
+    top: -83px;
+}
+.bt7{
+    height: 94px;
+    right: 69px;
+}
+.van{
+    position: absolute;
+    height: 80px;
+    right: -15px;
+    top: -83px;
+}
+.fotos .item:not(:last-child) {
+    margin-right: 6%;
+}
+
+.fotos .item {
+    width: 30%;
+}
