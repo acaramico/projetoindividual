@@ -14,23 +14,45 @@ module.exports = (sequelize, DataTypes) => {
 			autoIncrement: true
 		},		
 		nome: {
-			field: 'nome',
+			field: 'nomeCliente',
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
 		login: {
-			field: 'login',
+			field: 'Email',
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
-		senha: {
-			field: 'senha',
+		celular: {
+			field: 'Celular',
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
+		},
+		cpf: {
+			field: 'cpf',
+			type: DataTypes.STRING,
+			allowNull: true
+		},
+		dataNasc: {
+			field: 'dataNasc',
+			type: DataTypes.STRING,
+			allowNull: true
+		},
+		
+		senha: {
+			field: 'senhaCliente',
+			type: DataTypes.STRING,
+			allowNull: true
+		},
+		fkPlanos: {
+			field: 'fkPlanos',
+			type: DataTypes.INTEGER,
+			allowNull: true
 		}
+		
 	}, 
 	{
-		tableName: 'Usuario', 
+		tableName: 'Cliente', 
 		freezeTableName: true, 
 		underscored: true,
 		timestamps: false,

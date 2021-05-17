@@ -15,7 +15,7 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     </head>
-<body>
+<body onload="obterdados(sessionStorage.getItem('id_usuario_meuapp'))">
     <div class="header">
         
         <div class="container">
@@ -37,3 +37,30 @@
     
 </body>
 </html>
+
+<script>
+    function obterdados(id) {
+        //aguardar();
+        fetch(`/buscardados/${id}`)
+        .then(resposta => {
+            if (resposta.ok) {
+                resposta.json().then(function (resposta) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    // aqui, após registro. use os nomes 
+                    // dos atributos que vem no JSON 
+                    var dados = {
+                        bairro: resposta.bairro,
+                        uf: resposta.uf
+                    }
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+                console.error(`Erro na obtenção dos dados: ${error.message}`);
+            });
+    }
+</script>

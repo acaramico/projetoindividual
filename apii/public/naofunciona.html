@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,16 +11,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div class="header">
-
+        
         <div class="container">
             <a class="left" href="home.html">
                 <img src="fotos/logobts.png" class="logo">
                 <h1>BTS Box</h1>
             </a>
-
+            
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobrenos.html">Como funciona</a></li>
@@ -30,47 +28,38 @@
             </ul>
         </div>
     </div>
-
+    
 
     <div id="formulario" class="conteudo">
-        <h1 class="titulo">Login</h1>
-        <form  id="form_login" method="post" onsubmit="return entrar()">
-           <br>
-           <input style="border: solid #5428b3 2px;" type="text" name="email">
-           <br>
-           
-           <br>
-            <input type="password" style="border: solid #5428b3 2px;margin-bottom: 16px;" name="senha">
+        <div class="titulo">Login</div>
+        <form class="campos" method="post" id="form_login"  onsubmit="return entrar()">
+            
             <br>
-            <button id="btn_entrar" class="botaoentrar">Entrar</button>
+            <input style="border: solid #5428b3 2px;" id="email" type="text" placeholder=" E-mail" name="email" >
+            <br>
+            
+            <br>
+            <input style="border: solid #5428b3 2px;margin-bottom: 16px;" type="password" id="input_senha" name="senha" placeholder=" Senha">
+            <button id="btn_entrar" type="submit" class="botaoentrar">
+                Entrar
+            </button>
         </form>
-
+        <br><br>
         <div class="forgotpass">
-            <a href=""><u style="color: rgb(0, 0, 0);">Esqueceu sua senha?</u> </a>
+            <a href=""><u style="color: rgb(0, 0, 0);">Esqueceu sua senha?</u> </a> 
         </div>
-
-            <div id="div_erro" class="msg_erro">
-            </div>
-     
-        <span style="color: rgb(0, 0, 0);">Ainda não possui uma conta? <a href="cadastro.html"><u
-                    style="color: rgb(0, 0, 0);"> Cadastre-se aqui</u></a></span>
-
-        <!-- <img src="aguarde-orange.gif" id="img_aguarde"> -->
-        <!--style="display: none;"-->
-
+        <div id="div_erro" class="div_erro" >
+            aaa
+        </div>
+            <span style="color: rgb(0, 0, 0);">Ainda não possui uma conta? <a href="cadastro.html"><u style="color: rgb(0, 0, 0);"> Cadastre-se aqui</u></a></span> 
         <img src="fotos/bt2.png" class="bt2">
         <img src="fotos/doodle6.png" class="doodle6">
         <img src="fotos/doodle3.png" class="doodle3">
     </div>
-
-    <!--form da amanda-->
-
-
-
-
-
-    <div class="creditos">
-
+    
+    
+    <div class="creditos" >
+        
         <div class="img_creditos">
             <img src="fotos/logobranco.png">
             <br>
@@ -78,13 +67,13 @@
             <br>
             <div class="direitos_span">© 2021 - Direitos reservados</div>
         </div>
-
+    
         <div class="contato_creditos">
-            <a href="contato.html">Fale Conosco</a><br>
+            <a href="contato.html" >Fale Conosco</a><br>
             (13) 1306-2013
 
         </div>
-        <div class="redes_creditos" style="margin-top: 12px;">
+        <div class="redes_creditos" style="margin-top: 12px;" >
             <img src="fotos/instagram-logo.png" style="height: 30px; cursor: pointer; ">
             <img src="fotos/linkedin.png" style="height: 30px;margin-left: 4px; cursor: pointer; ">
 
@@ -93,15 +82,16 @@
     </div>
 
 
-</body>
 
+</body>
 </html>
 <script>
-
+    
     function entrar() {
+        
         aguardar();
         var formulario = new URLSearchParams(new FormData(form_login));
-        fetch("/usuarios/autenticar123", {
+        fetch("/usuarios/autenticar", {
             method: "POST",
             body: formulario
         }).then(resposta => {
@@ -113,7 +103,7 @@
                     sessionStorage.login_usuario_meuapp = json.email;
                     sessionStorage.nome_usuario_meuapp = json.nome;
 
-                    window.location.href = 'conta.html';
+                    window.location.href = 'cadastro-part2.html';
                 });
 
             } else {
@@ -131,18 +121,17 @@
     }
 
     function aguardar() {
-        // btn_entrar.disabled = true;
-        // img_aguarde.style.visibility = 'visible';
-        console.log("aguardar entrei")
+        console.log("entrei no aguardar()")
+        btn_entrar.disabled = true;
+        img_aguarde.style.visibility = 'visible';
         div_erro.style.visibility = 'hidden';
     }
 
     function finalizar_aguardar(resposta) {
-        console.log("finaliza aguardar entrei")
-        // btn_entrar.disabled = false;
-        // img_aguarde.style.visibility = 'hidden';
-        // div_erro.style.visibility = 'visible';
+        console.log("entrei no finalizar_aguardar()")
+        btn_entrar.disabled = false;
+        img_aguarde.style.visibility = 'hidden';
+        div_erro.style.visibility = 'visible';
         div_erro.innerHTML = resposta;
     }
-
 </script>
