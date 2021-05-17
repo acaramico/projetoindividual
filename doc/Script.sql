@@ -1,6 +1,5 @@
 create database projetoindividual;
 use projetoindividual;
-
 create table Planos(
 	idPlanos int primary key auto_increment,
     tipoPlano varchar(45)
@@ -13,7 +12,9 @@ create table Endereco(
     Bairro varchar(45),
     Cidade varchar(45),
     Estado char(2),
-    Numero int
+    Numero int,
+    fkCliente int,
+    foreign key (fkCliente) references Cliente(idCliente)
     ) auto_increment = 100;
     
 create table Cliente(
@@ -25,7 +26,7 @@ create table Cliente(
     dataNasc date,
     senhaCliente varchar(45),
     fkPlanos int,
-    FkEndereco int,
-    foreign key (fkPlanos) references Planos(idPlanos),
-    foreign key (fkEndereco) references Endereco(idEndereco)
+    foreign key (fkPlanos) references Planos(idPlanos)
     );
+    select * from cliente;
+    select * from endereco;
