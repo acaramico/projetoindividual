@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Cadastro</title>
+    <title>BTS BOX | Cadastro</title>
     <link rel="icon" href="fotos/logobts.png">
     <link rel="stylesheet" href="cadastrostyle.css">
     <link rel="stylesheet" href="headerstyle.css">
@@ -21,7 +21,7 @@
     <div class="header">
 
         <div class="container">
-            <a class="left" href="home.html">
+            <a class="left" href="index.html">
                 <img src="fotos/logobts.png" class="logo">
                 <h1>BTS Box</h1>
             </a>
@@ -29,6 +29,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobrenos.html">Como funciona</a></li>
+                <li><a href="grafico.html">Conquistas</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a class="active" href="login.html">Minha Conta</a></li>
             </ul>
@@ -62,16 +63,16 @@
             <input required onchange="validar_senha2()" type="password" id="input_senha" placeholder=" Senha"
                 name="senha">
 
-
+            <input required type="date" id="input_datanasc" placeholder="Data de Nascimento" name="dataNasc">
 
 
             <input required type="password" id="input_senha_check" placeholder=" Repita sua senha"
                 onchange="validar_senha()">
 
-            <input required type="date" id="input_datanasc" placeholder="Data de Nascimento" name="dataNasc">
+            
 
             <button id="btn_entrar" class="botaoentrar" type="submit" value="Cadastrar">
-                Cadastrar
+                Avançar
             </button>
             <div id="senha_incorreta"></div>
             <div style="margin-bottom: -33px;margin-right: 326px;" id="div_erro" class="div_erro">

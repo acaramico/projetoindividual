@@ -24,7 +24,7 @@
     border-radius: 9px;
     width: max-content;
     font-weight: bolder;
-    margin: 32px 89px 1px 414px !important;
+    margin: 1px 89px 1px 414px !important;
     color: white;
     font-family: 'Palanquin Dark', sans-serif;
     font-size: 18px;
@@ -37,6 +37,12 @@
     box-shadow: 0 0 10px 0px #e7dcff;
     margin-top: 58px;
     border: solid 1px #5428b3;
+    transition: all .4s;
+}
+.botaoentrar:hover {
+    background-color: #ffffff;
+    color: #673ab7;
+    box-shadow: 0 0 20px 5px #673ab7;
 }
 body{
     
@@ -68,9 +74,12 @@ form.campos {
     margin-left: -132px;
     color: #949494;
 }
-
 .creditos a{
     color: #949494;
+    transition: all .4s;
+}
+.creditos a:hover {
+    font-size: 17px;
 }
 .contato_creditos{
     width: fit-content;
@@ -101,7 +110,7 @@ input#in_uf {
     text-transform: uppercase;
 }
 div#senha_incorreta {
-    margin: -79px 330px 0px 0px;
+    margin: -39px 324px 0px 0px;
     text-shadow: 0 0 2px #dc3131;
 }
 div#div_mens_cep {
@@ -119,8 +128,8 @@ div#div_mens_cep {
 .bt1{
     position: absolute;
     height: 83px;
-    top: 498px;
-    right: 270px;
+    top: 362px;
+    right: 272px;
 }
 .doodle5{
     position: absolute;
@@ -146,4 +155,7 @@ div#div_mens_cep {
     height: 31px;
     top: 507px;
     left: 339px;
+}
+input#input_senha_check {
+    margin-right: 318px;
 }

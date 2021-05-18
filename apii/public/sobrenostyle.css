@@ -1,0 +1,104 @@
+body{
+    
+    backdrop-filter: blur(5px);
+}
+.fotos {
+    
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    display: flex;
+    justify-content: space-between;
+   
+}
+img{
+    max-width: 99%;
+}
+.fotos .item {
+    width: calc(100%/3 - 34px);
+}
+.fotos .item .card {
+    background-color: #f3f3f3;
+    padding: 10px;
+    border-radius: 12px;
+    height: calc(100% - 30px);
+    border: solid 3px #5428b3;
+    box-shadow: -1px 1px 10px 0px #5428b3;
+}
+.titulo{
+    text-align: center;
+    font-size: 32px;
+    font-weight: bolder;
+    margin: 0 0 35px;
+    text-decoration: underline #5428b3;
+    text-shadow: 3px 2px #5428b382;
+}
+.conteudo {
+    min-height: calc(100vh - 78px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.fotos .item .card img {
+    border-radius: 4px;
+    max-width: 104%;
+    margin-left: -9px;
+}
+
+
+
+.creditos{
+    justify-content: space-evenly;
+    height: 80px;
+    display: flex;
+    padding-bottom: 13px;
+    padding-top: 25px;
+    color: #949494;
+    
+}
+.creditos a{
+    color: #949494;
+    transition: all .4s;
+}
+.creditos a:hover {
+    font-size: 17px;
+}
+.contato_creditos{
+    width: fit-content;
+    text-align: center;
+}
+.img_creditos{
+    width: fit-content;
+    height: fit-content;
+    margin-top: -31px;
+    text-align: center;
+}
+.direitos_span{
+    margin-top: -11px;
+    font-size: 14px;
+}
+.img_creditos img{
+    height: 29px;
+    margin-top: 17px;
+    margin-bottom: -13px;
+}
+.bt7{
+    position: absolute;
+    height: 94px;
+    right: 75px;
+}
+.bt5{
+    position: absolute;
+    height: 83px;
+    top: 134px;
+    right: 404px;
+}
+.bt4{
+    position: absolute;
+    height: 81px;
+    top: 136px;
+    left: 378px;
+}

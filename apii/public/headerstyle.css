@@ -34,6 +34,10 @@
 
 .header ul a {
     padding: 15px;
+    transition: all .4s;
+}
+.header a:hover{
+    color: #fff;
 }
 
 body{
@@ -48,6 +52,10 @@ body{
     padding-bottom: 10px;
     font-size: 35px;
     text-shadow:  0px 0px 9px #ddd0ff;
+    transition: all .8s;
+}
+.header h1:hover {
+    text-shadow: 0 0 20px #50269c;
 }
 .logo{
     width: 30px;

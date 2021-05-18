@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>BTS BOX | Minha Conta</title>
+    <link rel="icon" href="fotos/logobts.png" />
+    <link rel="stylesheet" href="graficostyle.css" />
+    <link rel="stylesheet" href="headerstyle.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  </head>
+  <body onload="obterdados(sessionStorage.getItem('id_usuario_meuapp'))">
+    <div class="header">
+      <div class="container">
+        <a class="left" href="index.html">
+          <img src="fotos/logobts.png" class="logo" />
+          <h1>BTS Box</h1>
+        </a>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobrenos.html">Como funciona</a></li>
+          <li><a class="active" href="grafico.html">Conquistas</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="login.html">Minha Conta</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="conteudo">
+        <div class="graph">
+            <canvas id="myChartBar"></canvas>
+          </div>
+    </div>
+  </body>
+</html>
+<script>
+    
+
+    const labelsBar = ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"];
+    const dataBar = {
+  labels: labelsBar,
+  datasets: [
+    {
+      label: 'Prêmios ganhos',
+      color: "#000",
+      data: [1, 5, 10, 14, 31, 89, 101, 76, 42],
+      backgroundColor: "#ff6b99",
+      pointRadius: 5,
+      tension: 0.1,
+      pointStyle: "rectRounded"
+    },
+    {
+      label: 'Indicações',
+      color: "#000",
+      data: [2, 7, 17, 31, 58, 112, 130, 107, 77],
+      backgroundColor: "#3921d6",
+      pointRadius: 5,
+      tension: 0.1,
+      pointStyle: "rectRounded"
+    },
+    
+    
+  ]
+};
+    function colorize(opaque) {
+    return (ctx) => {
+        var v = ctx.parsed.y;
+        var c = v < -50 ? '#D60000'
+        : v < 0 ? '#F46300'
+        : v < 50 ? '#0358B6'
+        : '#44DE28';
+
+        return opaque ? c : Utils.transparentize(c, 1 - Math.abs(v / 150));
+    };
+    }
+    var delayed;
+    const configBar = {
+  type: 'bar',
+  data: dataBar,
+  options: {
+    plugins: {
+        animation: {
+      onComplete: () => {
+        delayed = true;
+      },
+      delay: (context) => {
+        let delay = 0;
+        if (context.type === 'dataBar' && context.mode === 'default' && !delayed) {
+          delay = context.dataIndex * 300 + context.datasetIndex * 100;
+        }
+        return delay;
+      },
+    },
+        
+        title: {
+        display: true,
+        color: "#000",
+        text: 'Prêmios e indicações do BTS ao longo dos anos'
+      },
+    },
+    responsive: true,
+    scales: {
+      x: {
+        stacked: true,
+      },
+      y: {
+        stacked: true,
+        min: 0,
+        max: 250,
+      }
+    }
+    
+  }
+  
+};
+
+
+    var myChartBar = new Chart(document.getElementById("myChartBar"), configBar);
+
+</script>

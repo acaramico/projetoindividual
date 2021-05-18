@@ -29,7 +29,7 @@
     border-radius: 15px;
     width: max-content;
     font-weight: bolder;
-    margin: 2px auto 46px;
+    margin: 15px auto 46px;
     color: #ffffff;
     font-family: 'Palanquin Dark', sans-serif;
     font-size: 19px;
@@ -38,6 +38,13 @@
     padding-top: 6px;
     padding-bottom: 6px;
     box-shadow: 0 0 13px 0px #c69dc0;
+    transition: all .4s;
+}
+a.botao:hover {
+    background-color: #ffffff;
+    color: #673ab7;
+    box-shadow: 0 0 20px 3px #673ab7;
+    
 }
 
 body{
@@ -60,6 +67,10 @@ body{
 
 .creditos a{
     color: #949494;
+    transition: all .4s;
+}
+.creditos a:hover {
+    font-size: 17px;
 }
 .contato_creditos{
     width: fit-content;
@@ -157,6 +168,7 @@ body{
     right: -15px;
     top: -83px;
 }
+
 .fotos .item:not(:last-child) {
     margin-right: 6%;
 }

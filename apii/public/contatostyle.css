@@ -1,7 +1,8 @@
-
-.header{
-    transition: all .4s;
+body{
+    
+    backdrop-filter: blur(5px);
 }
+
 .conteudo{
     border-radius: 12px;
     max-width: fit-content;
@@ -11,16 +12,15 @@
     box-shadow: 0px 1px 10px 1px #ffffff;
     background-color: #8d75cfbf;
     position: relative;
-    transition: all .4s;
 }
 .titulo{
     text-align: center;
     font-size: 27px;
     font-weight: bolder;
     text-shadow: -2px -2px #5428b3bd;
-    transition: all .4s;
+    
 }
-.botaoentrar{
+.botao_enviar{
     text-decoration: none;
     display: block;
     background-color: #5428b3;
@@ -29,7 +29,6 @@
     font-weight: bolder;
     margin: 14px auto;
     color: white;
-    margin-top: 20px;
     font-family: 'Palanquin Dark', sans-serif;
     font-size: 18px;
     color: #ffffff;
@@ -39,32 +38,43 @@
     padding-bottom: 3px;
     cursor: pointer;
     box-shadow: 0 0 10px 0px #e7dcff;
-    margin-top: 45px;
+    margin-top: 58px;
     border: solid 1px #5428b3;
-    margin-bottom: 25px;
     transition: all .4s;
 }
-.botaoentrar:hover {
+.botao_enviar:hover {
     background-color: #ffffff;
     color: #673ab7;
     box-shadow: 0 0 20px 5px #673ab7;
 }
-body{
-    
-    backdrop-filter: blur(5px);
-    transition: all .4s;
+.primeiro_bloco{
+    display: inline-grid;
+    align-content: space-evenly;
+    width: 46%;
+    margin-top: -51px;
 }
-input{
+.segundo_bloco{
+    width: 50%;
+}
+.campos{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 28px;
+    padding: 21px;
+    
+}
+input, textarea{
     border: solid 2px #5428b3;
     border-radius: 3px;
-    box-shadow: -4px -4px #5428b3;
+    box-shadow: -5px -5px #5428b3;
 }
 .creditos{
     justify-content: space-evenly;
     height: 81px;
     display: flex;
     padding-bottom: 13px;
-    padding-top: 250px;
+    padding-top: 170px;
     margin-left: -132px;
     color: #949494;
 }
@@ -100,28 +110,28 @@ input{
     height: 94px;
     right: 75px;
 }
-.bt2{
+.bt3{
     position: absolute;
-    height: 92px;
-    top: 136px;
-    left: 381px;
+    height: 73px;
+    top: 58px;
+    left: 485px;
 }
-.doodle6{
+.bt6{
     position: absolute;
-    height: 36px;
-    top: 22px;
-    right: 131px;
-    opacity: .7;
+    height: 109px;
+    left: 71px;
+    top: 398px;
 }
-.doodle3{
+.doodle4{
     position: absolute;
-    height: 43px;
-    top: 0px;
-    left: -18px;
+    height: 101px;
+    right: -19px;
+    top: 428px;
+    opacity: .6;
 }
-u:hover {
-    color: #2f2a63 !important;
-}
-u{
-    transition: all .4s;
+.doodle5{
+    position: absolute;
+    height: 82px;
+    left: -29px;
+    top: -24px;
 }

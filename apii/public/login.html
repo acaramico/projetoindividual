@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faça seu login</title>
+    <title>BTS BOX | Login</title>
     <link rel="icon" href="fotos/logobts.png">
     <link rel="stylesheet" href="loginstyle.css">
     <link rel="stylesheet" href="headerstyle.css">
@@ -17,7 +17,7 @@
     <div class="header">
 
         <div class="container">
-            <a class="left" href="home.html">
+            <a class="left" href="index.html">
                 <img src="fotos/logobts.png" class="logo">
                 <h1>BTS Box</h1>
             </a>
@@ -25,6 +25,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobrenos.html">Como funciona</a></li>
+                <li><a href="grafico.html">Conquistas</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a class="active" href="login.html">Minha Conta</a></li>
             </ul>
@@ -36,17 +37,17 @@
         <h1 class="titulo">Login</h1>
         <form  id="form_login" method="post" onsubmit="return entrar()">
            <br>
-           <input style="border: solid #5428b3 2px;" type="text" name="email">
+           <input placeholder=" Seu E-mail" style="border: solid #5428b3 2px;" type="text" name="email">
            <br>
            
            <br>
-            <input type="password" style="border: solid #5428b3 2px;margin-bottom: 16px;" name="senha">
+            <input placeholder=" Sua senha"type="password" style="border: solid #5428b3 2px;margin-bottom: 16px;" name="senha">
             <br>
             <button id="btn_entrar" class="botaoentrar">Entrar</button>
         </form>
 
         <div class="forgotpass">
-            <a href=""><u style="color: rgb(0, 0, 0);">Esqueceu sua senha?</u> </a>
+            <a href=""><u style="color: rgb(0, 0, 0);margin-bottom: 22px;display: block;">Esqueceu sua senha?</u> </a>
         </div>
 
             <div id="div_erro" class="msg_erro">
