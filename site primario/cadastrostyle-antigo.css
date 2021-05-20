@@ -24,7 +24,7 @@
     border-radius: 9px;
     width: max-content;
     font-weight: bolder;
-    margin: 32px 89px 1px 414px !important;
+    margin: 1px 96px 1px 414px !important;
     color: white;
     font-family: 'Palanquin Dark', sans-serif;
     font-size: 18px;
@@ -74,7 +74,6 @@ form.campos {
     margin-left: -132px;
     color: #949494;
 }
-
 .creditos a{
     color: #949494;
     transition: all .4s;
@@ -111,11 +110,11 @@ input#in_uf {
     text-transform: uppercase;
 }
 div#senha_incorreta {
-    margin: -79px 330px 0px 0px;
+    margin: -39px 324px 0px 0px;
     text-shadow: 0 0 2px #dc3131;
 }
 div#div_mens_cep {
-    margin: -19px -315px -10px 1px;
+    margin: -19px 338px -10px 1px;
     text-shadow: 0 0 2px #dc3131;
 }
 #in_uf::placeholder{
@@ -125,27 +124,33 @@ div#div_mens_cep {
     position: absolute;
     height: 94px;
     right: 75px;
-    
+    bottom: 0px;
 }
 .bt1{
     position: absolute;
     height: 83px;
-    top: 499px;
-    right: 270px;
-    z-index: 1;
+    top: 362px;
+    right: 272px;
 }
 .doodle5{
     position: absolute;
     height: 82px;
     left: -29px;
     top: -24px;
-    z-index: 1;
 }
 .doodle7{
     position: absolute;
     height: 29px;
     top: 65px;
     left: 287px;
+    
+}
+.div_erro{
+    margin-bottom: -40px;
+    margin-right: 326px;
+    display: block;
+    font-size: 19px;
+    text-shadow: -2px -1px 3px #5428b3;
 }
 .doodle6{
     position: absolute;
@@ -153,24 +158,7 @@ div#div_mens_cep {
     top: 319px;
     left: 339px;
 }
-#funcionou {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #643cb8e0;
-    border-radius: 12px;
-    font-size: 26px;
-    text-shadow: 0 0 7px #dfd0ff;
-    opacity: 0;
-    visibility: hidden;
-    transition: all .4s;
+input#input_senha_check {
+    margin-right: 318px;
 }
-#funcionou.deu{
-    opacity: 1;
-    visibility: visible;
-}
+

@@ -1,67 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>BTS BOX | Minha Conta</title>
-        <link rel="icon" href="fotos/logobts.png">
-        <link rel="stylesheet" href="contastyle.css">
-        <link rel="stylesheet" href="headerstyle.css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600&display=swap" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    </head>
-<body onload="obterdados(sessionStorage.getItem('id_usuario_meuapp'))">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>BTS BOX | Minha Conta</title>
+    <link rel="icon" href="fotos/logobts.png" />
+    <link rel="stylesheet" href="contastyle.css" />
+    <link rel="stylesheet" href="headerstyle.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  </head>
+  <body onload="obterdados(sessionStorage.getItem('id_usuario_meuapp'))">
     <div class="header">
-        
-        <div class="container">
-            <a class="left" href="index.html">
-                <img src="fotos/logobts.png" class="logo">
-                <h1>BTS Box</h1>
-            </a>
-            
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="sobrenos.html">Como funciona</a></li>
-                <li><a href="grafico.html">Conquistas</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a class="active" href="login.html">Minha Conta</a></li>
-            </ul>
-        </div>
+      <div class="container">
+        <a class="left" href="index.html">
+          <img src="fotos/logobts.png" class="logo" />
+          <h1>BTS Box</h1>
+        </a>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobrenos.html">Como funciona</a></li>
+          <li><a href="grafico.html">Conquistas</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a class="active" href="login.html">Minha Conta</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="conteudo"></div>
-    
-</body>
+    <div class="conteudo">
+      <div class="titulo">Minha Conta</div>
+      <div class="saudacao">안녕하세요, <span id="seu_nome"></span></div>
+      <div class="traducao">*Olá*</div>
+    </div>
+
+
+
+    <div class="creditos" >
+      <div class="img_creditos">
+          <img src="fotos/logobranco.png">
+          <br>
+          <b>BTS Box</b>
+          <br>
+          <div class="direitos_span">© 2021 - Direitos reservados</div>
+      </div>
+  
+      <div class="contato_creditos">
+          <a href="contato.html" >Fale Conosco</a><br>
+          (13) 1306-2013
+
+      </div>
+      <div class="redes_creditos" style="margin-top: 12px;" >
+          <img src="fotos/instagram-logo.png" style="height: 30px; cursor: pointer; ">
+          <img src="fotos/linkedin.png" style="height: 30px;margin-left: 4px; cursor: pointer; ">
+
+      </div>
+      <img class="bt7 absolute" src="fotos/bt7.png">
+  </div>
+  </body>
 </html>
 
 <script>
-    function obterdados(id) {
-        //aguardar();
-        fetch(`/buscardados/${id}`)
-        .then(resposta => {
-            if (resposta.ok) {
-                resposta.json().then(function (resposta) {
+  var id = sessionStorage.id_usuario_meuapp;
+  
+  function obterdados(id) {
+    //aguardar();
+    var dados;
+    fetch(`/usuarios/buscardados/${id}`, { method: "POST" })
+      .then((resposta) => {
+        console.log("frase");
+        if (resposta.ok) {
+          console.log("resposta ok");
+          resposta.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+            // aqui, após registro. use os nomes
+            // dos atributos que vem no JSON
+            dados = {
+              nome: resposta[0].nomeCliente,
+              login: resposta[0].Email,
+              celular: resposta[0].Celular,
+              cpf: resposta[0].cpf,
+              dataNasc: resposta[0].dataNasc,
+              cep: resposta[0].cep,
+              logradouro: resposta[0].Logradouro,
+              bairro: resposta[0].Bairro,
+              cidade: resposta[0].Cidade,
+              estado: resposta[0].Estado,
+              numero: resposta[0].Numero
+            };
+            console.log(dados);
+            seu_nome.innerHTML = dados.nome
+            seu_login.innerHTML = dados.login
+            seu_celular.innerHTML = dados.celular
+            seu_cpf.innerHTML = dados.cpf
+            seu_nasc.innerHTML = dados.dataNasc
+            seu_logradouro.innerHTML = dados.logradouro
+            seu_bairro.innerHTML = dados.bairro
+            sua_cidade.innerHTML = dados.cidade
+            seu_estado.innerHTML = dados.estado
+            seu_numero.innerHTML = dados.numero
+          });
+        } else {
+          console.error("Nenhum dado encontrado ou erro na API");
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados: ${error.message}`);
+      });
 
-                    // aqui, após registro. use os nomes 
-                    // dos atributos que vem no JSON 
-                    var dados = {
-                        bairro: resposta.bairro,
-                        uf: resposta.uf
-                    }
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-        .catch(function (error) {
-                console.error(`Erro na obtenção dos dados: ${error.message}`);
-            });
-    }
+      
+  }
+    
 </script>

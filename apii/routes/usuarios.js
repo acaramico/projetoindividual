@@ -63,14 +63,16 @@ router.post('/buscardados/:id', function (req, res, next) {
 	let id = req.params.id;
 	console.log('Recuperando dados por id cliente');
 
-	let instrucaoSql = `select * from cliente join endereco on idcliente=fkcliente where idcliente = '${id}'`;
+	let instrucaoSql = `select * from cliente where idCliente=${id}`;
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
 		model: Usuario
 	}).then(resultado => {
-		console.log(`Encontrados: ${resultado.length}`);
-		return resultado
+		console.log(`Encontr4dos: ${resultado.length}`);
+		console.log(`Achei: ${resultado}`);
+		res.json(resultado);
+		//return resultado
 		// if (resultado.length == 1) {
 		// 	sessoes.push(resultado[0].dataValues.login);
 		// 	console.log('sessoes: ',sessoes);
@@ -97,7 +99,15 @@ router.post('/cadastrar', function (req, res, next) {
 		celular: req.body.celular,
 		cpf: req.body.cpf,
 		dataNasc: req.body.dataNasc,
-		senha: req.body.senha
+		senha: req.body.senha,
+		cep: req.body.cep,
+		logradouro: req.body.logradouro,
+		bairro: req.body.bairro,
+		cidade: req.body.cidade,
+		estado: req.body.uf,
+		numero: req.body.num
+		
+
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
 		res.send(resultado);
@@ -109,6 +119,33 @@ router.post('/cadastrar', function (req, res, next) {
 router.post('/cadastrarendereco', function (req, res, next) {
 	console.log('Criando um endereço');
 
+	var cep = req.body.cep;
+	var 	logradouro = req.body.logradouro;
+	var 	bairro= req.body.bairro;
+	var 	cidade=req.body.cidade;
+	var 	estado= req.body.uf;
+	var 	numero= req.body.num;
+
+
+	var fkCliente = req.body.fkCliente
+	let instrucaoSql = `insert into cliente(CEP, Logradouro, Bairro, Cidade, Estado, Numero) values(${cep}, ${logradouro}, ${bairro}, ${cidade}, ${estado}, ${numero}) where idCliente = ${fkCliente}`;
+	console.log(instrucaoSql);
+
+	sequelize.query(instrucaoSql, {
+		model: Usuario
+	}).then(resultado => {
+		console.log(`Deu certo ${resultado}`);
+		
+
+		
+
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+
+	
+/*
 	Endereco.create({
 		cep: req.body.cep,
 		logradouro: req.body.logradouro,
@@ -124,6 +161,7 @@ router.post('/cadastrarendereco', function (req, res, next) {
 		console.error(erro);
 		res.status(500).send(erro.message);
 	});
+*/
 });
 
 

@@ -38,6 +38,8 @@
 }
 .header a:hover{
     color: #fff;
+    text-shadow: 0 0 20px #50269c;
+    
 }
 
 body{
@@ -61,6 +63,11 @@ body{
     width: 30px;
     margin-bottom: 5px;
     margin-right: 10px;
+    transition: all 0.6s;
+}
+img.logo:hover {
+    filter: invert(1);
+    
 }
 .left{
     display: flex;

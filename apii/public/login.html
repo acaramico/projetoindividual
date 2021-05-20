@@ -87,7 +87,7 @@
         </div>
         <div class="redes_creditos" style="margin-top: 12px;">
             <img src="fotos/instagram-logo.png" style="height: 30px; cursor: pointer; ">
-            <img src="fotos/linkedin.png" style="height: 30px;margin-left: 4px; cursor: pointer; ">
+            <img src="fotos/linkedin.png" style="height: 30px;margin-left: 4px; cursor: pointer;">
 
         </div>
         <img class="bt7 absolute" src="fotos/bt7.png">
@@ -108,18 +108,23 @@
         }).then(resposta => {
 
             if (resposta.ok) {
-
+                console.log('entrei')
+                
                 resposta.json().then(json => {
-
-                    sessionStorage.login_usuario_meuapp = json.email;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    console.log(resposta.json())
+                    sessionStorage.id_usuario_meuapp = json.idCliente;
+                    sessionStorage.login_usuario_meuapp = json.Email;
+                    sessionStorage.nome_usuario_meuapp = json.nomeCliente;
 
                     window.location.href = 'conta.html';
+                    
                 });
 
             } else {
 
                 console.log('Erro de login!');
+                div_erro.innerHTML = 'Erro'
+                div_erro.style.visibility = 'visible'
 
                 resposta.text().then(texto => {
                     console.error(texto);

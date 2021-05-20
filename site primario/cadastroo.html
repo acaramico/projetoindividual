@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>BTS | Cadastro</title>
+    <title>Cadastro</title>
     <link rel="icon" href="fotos/logobts.png">
     <link rel="stylesheet" href="cadastrostyle.css">
     <link rel="stylesheet" href="headerstyle.css">
@@ -27,59 +27,59 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sobrenos.html">Como funciona</a></li>
-                <li><a href="grafico.html">Conquistas</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a class="active" href="login.html">Minha Conta</a></li>
             </ul>
         </div>
     </div>
     
-    <div id="formulario" class="conteudo">
+    <div class="conteudo">
         <div class="titulo">Cadastro</div>
         <img class="bt1" src="fotos/bt1.png">
         <img src="fotos/doodle5.png" class="doodle5">
         <img src="fotos/doodle7.png" class="doodle7">
-        <img src="fotos/doodle6.png" class="doodle6" id="doodle" style="display: none;">
-        <div style="display: none;" id="div_mens_cep">Formato do CEP inválido</div>
-        <form class="campos" id="form_cadastro" onsubmit="return cadastrar()"method="post">
-            <input required id="input_nome" placeholder=" Nome Completo"name="nome">
-
-            <form method="get"  action="." >
+        <div class="formulario">
+            <div style="display: none;" id="div_mens_cep">Formato do CEP inválido</div>
+            <form class="campos" id="form_cadastro" onsubmit="return cadastrara()" method="post">
+                    
             
-            <input required placeholder=" CEP" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-                       onblur="pesquisacep(this.value);" />
+                <input name="nome" required id="input_nome" placeholder=" Nome Completo">
 
-            <input required id="input_email" type="email" placeholder=" E-mail" name="login">
-
-            <input required placeholder=" Logradouro" name="logradouro" type="text" id="rua" />
-
-            <input required id="input_tel" placeholder=" Telefone celular"name="celular" onkeypress="$(this).mask('(00)00000-0000')">
                 
-            <input required placeholder=" Bairro" name="bairro" type="text" id="bairro"/>
+                <input  placeholder=" CEP" name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                        onblur="pesquisacep(this.value);" />
 
-            <input required id="input_cnpj" placeholder=" CPF" name="cpf" onkeypress="$(this).mask('000.000.000-00')">
-                
-            <input required placeholder=" Cidade" name="cidade" type="text" id="cidade"/>
+                <input  id="input_email" name="login" type="email" placeholder=" E-mail" >
 
-            <input required onchange="validar_senha2()" type="password" id="input_senha" placeholder=" Senha" name="senha">
-                
-            <input required placeholder="  Estado"  name="uf" maxlength="2" type="text" id="in_uf" size="2" />
-           
-            <input required placeholder=" Número" maxlength="10" name="num" id="in_num" size="5" type="number">
-        
-            <input required type="password" id="input_senha_check" placeholder=" Repita sua senha" onchange="validar_senha()">
+                <input  placeholder=" Logradouro" name="rua" type="text" id="rua" />
 
-            <input required type="date" name="dataNasc" id="inpu_datanasc" placeholder="Data de Nascimento">
+                <input  id="input_tel" name="celular" placeholder=" Telefone celular" onkeypress="$(this).mask('(00)00000-0000')">
+                    
+                <input  placeholder=" Bairro" name="bairro" type="text" id="bairro"/>
+
+                <input  id="input_cnpj"namecpf placeholder=" CPF" onkeypress="$(this).mask('000.000.000-00')">
+                    
+                <input  placeholder=" Cidade" name="cidade" type="text" id="cidade"/>
+
+                <input  onchange="validar_senha2()" name="senha" type="password" id="input_senha" placeholder=" Senha">
+                    
+                <input  placeholder="  Estado"  name="uf" maxlength="2" type="text" id="in_uf" size="2" />
             
-            <button  id="btn_entrar" class="botaoentrar" type="submit" value="Cadastrar">
-                Cadastrar
-            </button>
-            <div  id="senha_incorreta"></div>
-            <div style="margin-bottom: -33px;margin-right: 326px;" id="div_erro" class="div_erro">
-            </div>
+                <input  placeholder=" Número" maxlength="10" name="num" id="in_num" size="5" type="number">
             
-        </form>
-        <div id="funcionou" class="funcionou">Cadastro realizado com sucesso!</div>
+                <input  type="password" id="input_senha_check" placeholder=" Repita sua senha" onchange="validar_senha()">
+
+                <input  type="date" name="dataNasc" id="inpu_datanasc" placeholder="Data de Nascimento">
+                
+                <button class="botaoentrar" type="submit" value="Cadastrar">
+                    Cadastrar
+                </button>
+                <div  id="senha_incorreta"></div>
+                <div style="margin-bottom: -33px;margin-right: 326px;" id="div_erro" class="div_erro">
+                </div>
+            
+            </form>
+        </div>
     </div>
     
     <div class="creditos" >
@@ -195,20 +195,20 @@
             senha_incorreta.innerHTML = ' '
         }
     }
-    function cadastrar() {
+    function cadastrara() {
+        
         aguardar();
         var formulario = new URLSearchParams(new FormData(form_cadastro));
         fetch("/usuarios/cadastrar", {
-            method: "POST",
+            method: "post",
             body: formulario
         }).then(function (response) {
-            
+            console.log(response)
             if (response.ok) {
-                //div_erro.display = 'block'
-                //doodle.style.display = 'block'
-                //div_erro.innerHTML = 'Cadastro realizado com sucesso!'
+                div_erro.display = 'block'
+                doodle.style.display = 'block'
+                div_erro.innerHTML = 'Cadastro realizado com sucesso!'
                 //window.location.href='login.html';
-                funcionou.classList.add("deu");
 
             } else {
 
@@ -223,6 +223,8 @@
         });
 
         return false;
+        
+    
     }
 
     function aguardar() {

@@ -12,3 +12,51 @@ body{
     background-color: #8d75cfbf;
     position: relative;
 }
+.titulo{
+    text-align: center;
+    font-size: 27px;
+    font-weight: bolder;
+    text-shadow: -2px -2px #5428b3bd;
+    
+}
+
+.creditos{
+    justify-content: space-evenly;
+    height: 80px;
+    display: flex;
+    padding-bottom: 13px;
+    padding-top: 25px;
+    color: #949494;
+    
+}
+.creditos a{
+    color: #949494;
+    transition: all .4s;
+}
+.creditos a:hover {
+    font-size: 17px;
+}
+.contato_creditos{
+    width: fit-content;
+    text-align: center;
+}
+.img_creditos{
+    width: fit-content;
+    height: fit-content;
+    margin-top: -31px;
+    text-align: center;
+}
+.direitos_span{
+    margin-top: -11px;
+    font-size: 14px;
+}
+.img_creditos img{
+    height: 29px;
+    margin-top: 17px;
+    margin-bottom: -13px;
+}
+.bt7{
+    position: absolute;
+    height: 94px;
+    right: 75px;
+}

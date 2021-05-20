@@ -80,6 +80,7 @@ input{
     width: fit-content;
     text-align: center;
 }
+
 .img_creditos{
     width: fit-content;
     height: fit-content;
@@ -121,7 +122,15 @@ input{
 }
 u:hover {
     color: #2f2a63 !important;
+    
 }
 u{
     transition: all .4s;
+}
+div#div_erro {
+    position: absolute;
+    top: 211px;
+    right: 84px;
+    font-size: 17px;
+    text-shadow: 0 0 2px #dc3131;
 }

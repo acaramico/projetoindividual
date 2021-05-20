@@ -16,37 +16,41 @@ module.exports = (sequelize, DataTypes) => {
         cep: {
 			field: 'cep',
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
         logradouro: {
 			field: 'logradouro',
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
         bairro: {
 			field: 'bairro',
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
         cidade: {
 			field: 'cidade',
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
         estado: {
 			field: 'estado',
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
         numero: {
 			field: 'numero',
 			type: DataTypes.INTEGER,
-			allowNull: false
+			allowNull: true
 		},
         fkCliente: {
 			field: 'fkCliente',
 			type: DataTypes.INTEGER,
-			allowNull: true
+			allowNull: true,
+			references: {
+				model: 'usuario',
+				key: 'idCliente', 
+				}
 		}
 		
 	}, 

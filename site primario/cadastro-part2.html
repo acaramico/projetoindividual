@@ -38,11 +38,11 @@
 
     <div id="formulario" class="conteudo">
         <div class="titulo">Cadastrar Endereço</div>
-        <img class="bt1" src="fotos/bt1.png">
+        <img style="top: 309px;right: 274px;" class="bt1" src="fotos/bt1.png">
         <img src="fotos/doodle5.png" class="doodle5">
         <img src="fotos/doodle7.png" class="doodle7">
         <img src="fotos/doodle6.png" class="doodle6" id="doodle" style="display: none;">
-        <div style="display: none;" id="div_mens_cep">Formato do CEP inválido</div>
+        <div style="display: none;" id="div_mens_cep">CEP inválido</div>
         <form class="campos" id="form_cadastro" onsubmit="return cadastrar()" method="post">
             
 
@@ -52,25 +52,24 @@
                     onblur="pesquisacep(this.value);" />
 
                     <input type="hidden" name="fkCliente" id="fkCliente" >
+                    <input type="hidden" name="nome" id="nome" >
+                    <input type="hidden" name="login" id="login" >
+                    <input type="hidden" name="celular" id="celular" >
+                    <input type="hidden" name="cpf" id="cpf" >
+                    <input type="hidden" name="dataNasc" id="dataNasc" >
+                    <input type="hidden" name="senha" id="senha" >
                 
 
                 <input required placeholder=" Logradouro" name="logradouro" type="text" id="rua" />
 
-                
-
                 <input required placeholder=" Bairro" name="bairro" type="text" id="bairro" />
 
                 
-
-                <input required placeholder=" Cidade" name="cidade" type="text" id="cidade" />
-
-                
-
                 <input required placeholder="  Estado" name="uf" maxlength="2" type="text" id="in_uf" size="2" />
 
                 <input required placeholder=" Número" maxlength="10" name="num" id="in_num" size="5" type="number">
 
-                
+                <input style="margin-right: 323px;" required placeholder=" Cidade" name="cidade" type="text" id="cidade" />
 
                 
 
@@ -78,7 +77,7 @@
                     Cadastrar
                 </button>
                 
-                <div style="margin-bottom: -33px;margin-right: 326px;" id="div_erro" class="div_erro">
+                <div style="margin-bottom: -32px;margin-right: 326px;" id="div_erro" class="div_erro">
                 </div>
 
             </form>
@@ -114,6 +113,12 @@
 
 function identificaUsuario() {
     fkCliente.value = sessionStorage.getItem("id_usuario_meuapp");
+    nome.value = sessionStorage.getItem("id_usuario_meuapp");
+    login.value = sessionStorage.getItem("id_usuario_meuapp");
+    celular.value = sessionStorage.getItem("id_usuario_meuapp");
+    cpf.value = sessionStorage.getItem("id_usuario_meuapp");
+    dataNasc.value = sessionStorage.getItem("id_usuario_meuapp");
+    senha.value = sessionStorage.getItem("id_usuario_meuapp");
 }
 
     function limpa_formulário_cep() {

@@ -41,94 +41,126 @@
     </div>
 
     <div class="conteudo">
-        <div class="graph">
-            <canvas id="myChartBar"></canvas>
-          </div>
+      <div class="titulo">Conquistas</div>
+      <img class="doodle1" src="fotos/doodle1.png">
+      <img class="bt8" src="fotos/bt8.png">
+      <img class="bt9" src="fotos/bt9.png">
+      <img src="fotos/doodle6.png" class="doodle6">
+      <div class="texto">
+        Algumas conquistas do BTS que marcaram a história: 
+        Único grupo de K-Pop vencedor do prêmio Top Duo/Group (Melhor Duo/Grupo) no Billboard Music Awards em 2019 Em 2019 e 2020, ganharam todos os quatro "Daesang" na
+        premiação Mnet Asian Music Awards, fazendo deles o artista com mais "Daesang" ganhos da história 
+        Ganharam consecutivamente o prêmio Billboard's Top Social Artist (artista social votado pelos fãs) desde 2017 
+        Possuem 18 recordes no Guinness World Records, incluindo vídeo do Youtube mais visto em 24h com "Dynamite" 
+        Os recebedores mais jovens de todos os tempos do Mérito Cultural da Ordem da Coréia do Sul
+        Recentemente se tornaram o primeiro ato Coreano a receber uma nomeação ao Grammy Awards de 2021 
+        Ao longo dos anos o BTS recebeu já 541 indicações em premiações musicais, tendo ganho 369 prêmios
+        Estima-se que eles movimentam de forma direta ou indireta, mais de US$ 3,7 bilhões por ano, na economia da Coreia do Sul
+        De todos os CDs vendidos da Coréia do Sul, metade são do BTS
+      </div>
+
+      <div class="graph">
+        <canvas id="myChartBar"></canvas>
+      </div>
+    </div>
+
+    <div class="creditos">
+      <div class="img_creditos">
+        <img src="fotos/logobranco.png" />
+        <br />
+        <b>BTS Box</b>
+        <br />
+        <div class="direitos_span">© 2021 - Direitos reservados</div>
+      </div>
+
+      <div class="contato_creditos">
+        <a href="contato.html">Fale Conosco</a><br />
+        (13) 1306-2013
+      </div>
+      <div class="redes_creditos" style="margin-top: 12px">
+        <img
+          src="fotos/instagram-logo.png"
+          style="height: 30px; cursor: pointer"
+        />
+        <img
+          src="fotos/linkedin.png"
+          style="height: 30px; margin-left: 4px; cursor: pointer"
+        />
+      </div>
+      <img class="bt7 absolute" src="fotos/bt7.png" />
     </div>
   </body>
 </html>
 <script>
-    
-
-    const labelsBar = ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"];
-    const dataBar = {
-  labels: labelsBar,
-  datasets: [
-    {
-      label: 'Prêmios ganhos',
-      color: "#000",
-      data: [1, 5, 10, 14, 31, 89, 101, 76, 42],
-      backgroundColor: "#ff6b99",
-      pointRadius: 5,
-      tension: 0.1,
-      pointStyle: "rectRounded"
-    },
-    {
-      label: 'Indicações',
-      color: "#000",
-      data: [2, 7, 17, 31, 58, 112, 130, 107, 77],
-      backgroundColor: "#3921d6",
-      pointRadius: 5,
-      tension: 0.1,
-      pointStyle: "rectRounded"
-    },
-    
-    
-  ]
-};
-    function colorize(opaque) {
-    return (ctx) => {
-        var v = ctx.parsed.y;
-        var c = v < -50 ? '#D60000'
-        : v < 0 ? '#F46300'
-        : v < 50 ? '#0358B6'
-        : '#44DE28';
-
-        return opaque ? c : Utils.transparentize(c, 1 - Math.abs(v / 150));
-    };
-    }
-    var delayed;
-    const configBar = {
-  type: 'bar',
-  data: dataBar,
-  options: {
-    plugins: {
-        animation: {
-      onComplete: () => {
-        delayed = true;
-      },
-      delay: (context) => {
-        let delay = 0;
-        if (context.type === 'dataBar' && context.mode === 'default' && !delayed) {
-          delay = context.dataIndex * 300 + context.datasetIndex * 100;
-        }
-        return delay;
-      },
-    },
-        
-        title: {
-        display: true,
+  const labelsBar = [
+    "2013",
+    "2014",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+  ];
+  const dataBar = {
+    labels: labelsBar,
+    datasets: [
+      {
+        label: "Prêmios ganhos",
         color: "#000",
-        text: 'Prêmios e indicações do BTS ao longo dos anos'
+        data: [1, 5, 10, 14, 31, 89, 101, 76, 42],
+        backgroundColor: "#922ee4",
+        pointRadius: 5,
+        tension: 0.1,
+        pointStyle: "rectRounded",
+      },
+      {
+        label: "Indicações",
+        color: "#000",
+        data: [2, 7, 17, 31, 58, 112, 130, 107, 77],
+        backgroundColor: "#3921d6",
+        pointRadius: 5,
+        tension: 0.1,
+        pointStyle: "rectRounded",
+      },
+    ],
+  };
+
+  const configBar = {
+    type: "bar",
+    data: dataBar,
+    color: "#000",
+    options: {
+      plugins: {
+        legend: {
+          labels: {
+            color: "#000",
+          },
+        },
+
+        title: {
+          display: true,
+          color: "#000",
+          text: "Prêmios e indicações do BTS ao longo dos anos",
+        },
+      },
+      responsive: true,
+      scales: {
+        x: {
+          stacked: true,
+          scaleFontColor: "#000",
+        },
+        y: {
+          stacked: false,
+          min: 0,
+          max: 150,
+          scaleFontColor: "#000",
+        },
       },
     },
-    responsive: true,
-    scales: {
-      x: {
-        stacked: true,
-      },
-      y: {
-        stacked: true,
-        min: 0,
-        max: 250,
-      }
-    }
-    
-  }
-  
-};
+  };
 
-
-    var myChartBar = new Chart(document.getElementById("myChartBar"), configBar);
-
+  var myChartBar = new Chart(document.getElementById("myChartBar"), configBar);
+  //var myChartBar = new Chart(document.getElementById("myChartBar")).Bar(configBar, {scaleFontColor : "#ffa45e"});
 </script>

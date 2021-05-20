@@ -25,8 +25,33 @@ create table Cliente(
     CPF char(14),
     dataNasc date,
     senhaCliente varchar(45),
+    CEP char(9) default null,
+    Logradouro varchar(45),
+    Bairro varchar(45),
+    Cidade varchar(45),
+    Estado char(2),
+    Numero int,
     fkPlanos int,
     foreign key (fkPlanos) references Planos(idPlanos)
     );
     select * from cliente;
     select * from endereco;
+	select * from planos;
+    
+    insert into Planos values(null,'Mensal'),(null,'Bimestral');
+    
+    create table Premios(
+		idAno int primary key auto_increment,
+        Nomeaçoes int,
+        Ganhos int
+        ) auto_increment = 2013;
+        
+        insert into Premios values(null,2,1),(null,7,5),(null,17,10),(null,31,14),
+        (null,58,31),(null,112,89),(null,130,101),(null,107,76),(null,77,42);
+        
+        select * from premios;
+    
+    
+   
+    
+
