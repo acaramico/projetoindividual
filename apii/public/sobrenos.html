@@ -40,8 +40,9 @@
         <div class="fotos">
             <div class="item">
                 <div class="card">
-                    <img class="bt4" src="fotos/bt4.png">
-                 <img src="fotos/passo1.png">
+                    <img onclick="togglebalao4()" class="bt4" src="fotos/bt4.png">
+                    <span id="balao4">Mang입니다</span>
+                    <img src="fotos/passo1.png">
                 </div>
             </div>
             <div class="item">
@@ -51,8 +52,9 @@
             </div>
            <div class="item">
             <div class="card">
-                <img class="bt5" src="fotos/bt5.png">
-             <img src="fotos/passo3.png">
+                <img onclick="togglebalao5()" class="bt5" src="fotos/bt5.png">
+                <span id="balao5">Chimmy입니다</span>
+                <img src="fotos/passo3.png">
             </div>
            </div>
         
@@ -89,3 +91,22 @@
     
 </body>
 </html>
+<script>
+    var balao4 = document.getElementById('balao4');
+    function togglebalao4() {
+        if(balao4.classList.contains('show')) {
+            balao4.classList.remove('show');
+        } else {
+            balao4.classList.add('show');
+        }
+    }
+
+    var balao5 = document.getElementById('balao5');
+    function togglebalao5() {
+        if(balao5.classList.contains('show')) {
+            balao5.classList.remove('show');
+        } else {
+            balao5.classList.add('show');
+        }
+    }
+</script>

@@ -2,22 +2,15 @@ body{
     
     backdrop-filter: blur(5px);
 }
-.conteudo{
-    border-radius: 12px;
-    max-width: fit-content;
-    padding: 28px;
-    margin: 155px auto 0;
-    text-align: center;
-    box-shadow: 0px 1px 10px #ffffff;
-    background-color: #8d75cfbf;
-    position: relative;
-}
+
 .titulo{
     text-align: center;
     font-size: 27px;
     font-weight: bolder;
-    text-shadow: -2px -2px #5428b3bd;
-    
+    margin-left: -60px;    
+    color: #d8ccee;
+    text-shadow: -2px -2px #f4f1fa36;
+    line-height: 40px;
 }
 
 .creditos{
@@ -59,4 +52,200 @@ body{
     position: absolute;
     height: 94px;
     right: 75px;
+}
+
+
+
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 430px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0px 1px 10px #ffffff;
+    background-color: rgb(179, 151, 216);
+    position: relative;
+    border-radius: 12px;    
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card.turn .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: calc(100% - 56px);
+    height: calc(100% - 56px);
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    padding: 28px;
+    border-radius: 12px;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front, .flip-card-back {
+    background-color: rgb(179, 151, 216);
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+
+
+  img{
+      max-width: 100%;
+  }
+  .front-conteudo {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.front-left {
+    width: 145px;
+}
+
+.front-right {
+    width: calc(100% - 185px);
+}
+.links a {
+    text-decoration: none;
+    color: #2f106d;
+    font-size: 17px;
+    transition: all .4s;
+}
+.links {
+    margin-top: 25px;
+}
+.links a:hover {
+    font-size: 17.7px;
+}
+.btid img {
+    max-width: 100%;
+    box-shadow: 0 0 9px #dcd4df;
+}
+.dados1 {
+    width: fit-content;
+}
+
+.dados2 {
+    width: fit-content;
+}
+.informaçoes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.saudacao {
+    margin-top: 35px;
+    width: fit-content;
+    font-size: 18px;
+    margin-left: 38px;
+}
+.setagirar{
+    position: absolute;
+    bottom: -61px;
+    right: -85px;
+    cursor: pointer;
+}
+img.seta {
+    height: 60px;
+    filter: brightness(10);
+}
+
+.conteudo-pag {
+    height: calc(100vh - 194px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo-pag .setagirar {
+    right: -80px;
+    bottom: -50px;
+    color: #fff;
+    font-size: 23px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.conteudo-pag .setagirar span {
+    display: block;
+    margin: 0 0 0 -6px;
+}
+
+.conteudo-pag .paidocard {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+}
+
+.front-conteudo, .back-conteudo {
+    position: relative;
+}
+
+.front-conteudo::after, .back-conteudo::after {
+    content: "";
+    position: absolute;
+    left: -28px;
+    width: calc(100% + 56px);
+    background-color: #5c34b6;
+}
+
+.front-conteudo::after {
+    height: 97px;
+    border-radius: 12px 12px 0 0;
+    top: -28px;
+}
+
+.back-conteudo::after {
+    top: 0;
+    height: 69px;
+}
+
+.front-conteudo > div, .back-conteudo > div {
+    z-index: 1;
+}
+
+.back-conteudo .endereco .item {
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.back-conteudo {
+    height: calc(100% - 69px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 69px 0 0;
+}
+
+.back-conteudo .titulo {
+    margin: 0 0 20px;
+    width: 100%;
+    color: #000;
+    text-shadow: -2px -2px #5428b3bd;
+}
+
+.back-conteudo .endereco {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    
 }

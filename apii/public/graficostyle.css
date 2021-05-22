@@ -5,12 +5,12 @@ body{
 
 .conteudo{
     border-radius: 12px;
-    max-width: 1000px;
+    max-width: 1100px;
     padding: 28px;
-    margin: 130px auto 0;
+    margin: 100px auto 0;
     text-align: center;
     box-shadow: 0px 1px 10px 1px #ffffff;
-    background-color: #8d75cfbf;
+    background-color: #8d75cfeb;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +23,8 @@ body{
     font-size: 27px;
     font-weight: bolder;
     text-shadow: -2px -2px #5428b3bd;
-    
+    position: relative;
+    padding-bottom: 40px;
 }
 
 
@@ -32,15 +33,28 @@ body{
 }
 .graph {
     width: 60%;
+    padding: 10PX;
+    background-color: #c3b2e5;
+    border-radius: 12px;
+    box-shadow: 0px 0px 0px white;
+    box-shadow: 1px 0px 20px #5f34b7;
+    border: 2px solid #5f34b7;
+    position: relative;
 }
 .texto{
-    width: 40%;
+    width: 35%;
+}
+h3{
+    font-size: 21px;
+    text-shadow: 0 0 20px #d4b1e4;
+    line-height: 22px;
+    margin: 40px 0px 23px;
 }
 
 
 .creditos{
     justify-content: space-evenly;
-    height: 80px;
+    height: 81px;
     display: flex;
     padding-bottom: 13px;
     padding-top: 75px;
@@ -88,16 +102,87 @@ body{
 .doodle6{
     position: absolute;
     height: 28px;
-    top: 26px;
-    right: 435px;
-    opacity: 0.8;
+    top: -2px;
+    right: 458px;
+    opacity: 0.9;
 }
 .bt8{
     position: absolute;
     height: 87px;
+    top: -84px;
+    right: 130px;
 }
 .bt9{
     position: absolute;
-    height: 87px;
+    height: 58px;
+    left: -33px;
+    bottom: 39px;
+}
+.conteudo ul{
+    text-align: left;
+    padding-left: 25px;
+}
+.lista2{
+   margin-top: 40px;
+}
+.conteudo li {
+    list-style: none;
+    position: relative;
+}
+.conteudo li::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background-image: url(fotos/star2.png);
+    background-position: center;
+    background-size: contain;
+    top: 4px;
+    left: -25px;
+}
 
+
+
+
+#balao8, #balao9 {
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    transition: all 1s;
+    font-size: 0;
+    width: 0;
+    height: 0;
+}
+
+#balao8.show, #balao9.show {
+    width: 130px;
+    height: 65px;
+}
+
+#balao8.show {
+    font-size: 17px;
+    top: -125px;
+    right: 3px;
+}
+
+#balao9.show {
+    font-size: 16px;
+    bottom: 50px;
+    left: -155px;
+}
+
+#balao8 {
+    background-image: url(fotos/balao1.png);
+    top: -47px;
+    right: 122px;
+}
+
+#balao9 {
+    background-image: url(fotos/balao12.png);
+    bottom: 45px;
+    left: -45px;
 }

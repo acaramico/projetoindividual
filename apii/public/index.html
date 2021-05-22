@@ -52,7 +52,8 @@
         <img src="fotos/estrela.png"class="estrela1 absolute">
         <img src="fotos/estrela.png"class="estrela2 absolute">
         <img src="fotos/estrela.png"class="estrela3 absolute">
-        <img onclick="mostrarbalao()" src="fotos/van.png" class="van">
+        <img onclick="togglebalao1()" src="fotos/van.png" class="van">
+        <span id="balao1">VAN입니다</span>
         <img src="fotos/lua.png"class="lua absolute">
         
         
@@ -100,5 +101,12 @@
 
 </html>
 <script>
-    
+    var balao1 = document.getElementById('balao1');
+    function togglebalao1() {
+        if(balao1.classList.contains('show')) {
+            balao1.classList.remove('show');
+        } else {
+            balao1.classList.add('show');
+        }
+    }
 </script>

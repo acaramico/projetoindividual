@@ -135,3 +135,51 @@ input, textarea{
     left: -29px;
     top: -24px;
 }
+
+
+
+
+
+
+
+#balao3, #balao6 {
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    transition: all 1s;
+    font-size: 0;
+    width: 0;
+    height: 0;
+}
+
+#balao3 {
+    background-image: url(fotos/balao1.png);
+    top: 85px;
+    right: 162px;
+}
+
+#balao6 {
+    background-image: url(fotos/balao12.png);
+    left: 65px;
+    bottom: 40px;
+}
+
+#balao3.show, #balao6.show {
+    font-size: 17px;
+    width: 130px;
+    height: 65px;
+}
+
+#balao3.show {
+    top: 7px;
+    right: 45px;
+}
+
+#balao6.show {
+    left: -50px;
+    bottom: 50px;
+}

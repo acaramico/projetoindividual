@@ -44,8 +44,10 @@
             </div>
             <button type="submit" class="botao_enviar">Enviar mensagem</button>
         </form>
-        <img src="fotos/bt3.png" class="bt3">
-        <img src="fotos/bt6.png" class="bt6">
+        <img onclick="togglebalao3()" src="fotos/bt3.png" class="bt3">
+        <span id="balao3">Koya입니다</span>
+        <img onclick="togglebalao6()" src="fotos/bt6.png" class="bt6">
+        <span id="balao6">RJ입니다</span>
         <img src="fotos/doodle5.png" class="doodle5">
         <img src="fotos/doodle4.png" class="doodle4">
     </div>
@@ -76,3 +78,22 @@
 
 </body>
 </html>
+<script> 
+    var balao3 = document.getElementById('balao3');
+    function togglebalao3() {
+        if(balao3.classList.contains('show')) {
+          balao3.classList.remove('show');
+        } else {
+          balao3.classList.add('show');
+        }
+    }
+    
+    var balao6 = document.getElementById('balao6');
+    function togglebalao6() {
+        if(balao6.classList.contains('show')) {
+            balao6.classList.remove('show');
+        } else {
+            balao6.classList.add('show');
+        }
+    }
+</script>

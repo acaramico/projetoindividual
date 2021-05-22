@@ -174,3 +174,35 @@ div#div_mens_cep {
     opacity: 1;
     visibility: visible;
 }
+
+
+
+
+
+
+
+#balao1 {
+    z-index: 2;
+    background-image: url(fotos/balao12.png);
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    transition: all 1s;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    right: 357px;
+    bottom: 20px;
+}
+
+#balao1.show {
+    font-size: 17px;
+    width: 130px;
+    height: 65px;
+    right: 343px;
+    bottom: 24px;
+}

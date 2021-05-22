@@ -134,3 +134,33 @@ div#div_erro {
     font-size: 17px;
     text-shadow: 0 0 2px #dc3131;
 }
+
+
+
+
+
+
+#balao2 {
+    background-image: url(fotos/balao1.png);
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    transition: all 1s;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    top: 147px;
+    left: 414px;
+}
+
+#balao2.show {
+    font-size: 22px;
+    width: 130px;
+    height: 67px;
+    top: 71px;
+    left: 410px;
+}

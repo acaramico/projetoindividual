@@ -26,6 +26,7 @@ img{
     height: calc(100% - 30px);
     border: solid 3px #5428b3;
     box-shadow: -1px 1px 10px 0px #5428b3;
+    position: relative;
 }
 .titulo{
     text-align: center;
@@ -93,12 +94,53 @@ img{
 .bt5{
     position: absolute;
     height: 80px;
-    top: 137px;
-    right: 404px;
+    top: -75px;
+    right: 90px;
 }
 .bt4{
     position: absolute;
     height: 81px;
-    top: 136px;
-    left: 378px;
+    top: -76px;
+    right: 60px;
+}
+
+
+
+#balao4, #balao5 {
+    background-image: url(fotos/balao12.png);
+    position: absolute;
+    top: -130px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    transition: all 1s;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    top: -55px;
+}
+
+#balao4 {
+    right: 140px;
+}
+
+#balao5 {
+    right: 155px;
+}
+
+#balao4.show, #balao5.show {
+    width: 130px;
+    height: 65px;
+    top: -130px;
+}
+
+#balao4.show {
+    font-size: 17px;
+}
+
+#balao5.show {
+    font-size: 14px;
 }

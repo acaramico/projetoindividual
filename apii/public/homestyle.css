@@ -176,3 +176,33 @@ body{
 .fotos .item {
     width: 30%;
 }
+
+
+
+#balao1 {
+    background-image: url(fotos/balao12.png);
+    position: absolute;
+    right: 65px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    /*opacity: 0;
+    visibility: hidden;*/
+    transition: all 1s;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    top: -40px;
+}
+
+#balao1.show {
+    /*opacity: 1;
+    visibility: visible;*/
+    font-size: 17px;
+    width: 130px;
+    height: 65px;
+    top: -130px;
+}

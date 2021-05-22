@@ -50,6 +50,8 @@ create table Cliente(
         (null,58,31),(null,112,89),(null,130,101),(null,107,76),(null,77,42);
         
         select * from premios;
+        
+        update Premios set Ganhos = 1 where idAno = 2013;
     
     
    

@@ -59,7 +59,8 @@
         <!-- <img src="aguarde-orange.gif" id="img_aguarde"> -->
         <!--style="display: none;"-->
 
-        <img src="fotos/bt2.png" class="bt2">
+        <img onclick="togglebalao2()" src="fotos/bt2.png" class="bt2">
+        <span id="balao2">안녕</span>
         <img src="fotos/doodle6.png" class="doodle6">
         <img src="fotos/doodle3.png" class="doodle3">
     </div>
@@ -98,6 +99,14 @@
 
 </html>
 <script>
+    var balao2 = document.getElementById('balao2');
+    function togglebalao2() {
+        if(balao2.classList.contains('show')) {
+          balao2.classList.remove('show');
+        } else {
+          balao2.classList.add('show');
+        }
+    }
 
     function entrar() {
         aguardar();

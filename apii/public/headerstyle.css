@@ -8,6 +8,7 @@
     background-color: transparent;
     color: #000000;
     padding: 10px;
+    transition: all .4s;
 
 }
 .header > .container{
@@ -30,6 +31,7 @@
     text-decoration: none;
     color: #000000;
     font-weight: bold;
+    transition: all .4s;
 }
 
 .header ul a {

@@ -39,13 +39,60 @@
       </div>
     </div>
 
-    <div class="conteudo">
-      <div class="titulo">Minha Conta</div>
-      <div class="saudacao">안녕하세요, <span id="seu_nome"></span></div>
-      <div class="traducao">*Olá*</div>
+
+    <div class="conteudo-pag">
+      <div class="paidocard">
+        <div class="setagirar" onclick="toggleturn()">
+          <img class="seta" src="fotos/seta.png">
+          <span class="virar">Virar</span>
+        </div>
+        <div class="flip-card" id="card" >
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="front-conteudo">
+                <div class="front-left">
+                  <div class="btid">
+                    <img src="fotos/id.jpg">
+                  </div>
+                  <div class="links">
+                    <a href="">Assinatura ativa</a><br>
+                    <a href="">Editar dados</a><br>
+                    <a href="login.html">Sair</a>
+                  </div>
+                </div>
+                <div class="front-right">
+                  <div class="titulo">Minha Conta</div>                
+                  <div class="saudacao">안녕하세요 (Olá), <span id="seu_nome">Carregando...</span></div>                  
+                  <div class="informaçoes">
+                    <div class="dados1">
+                      <div>Login<br><span id="seu_login">Carregando...</span></div><br>
+                      <div>Celular<br><span id="seu_celular">Carregando...</span></div>
+                    </div>
+                    <div class="dados2">
+                      <div>CPF<br><span id="seu_cpf">Carregando...</span></div><br>
+                      <div>Data de Nascimento<br><span id="seu_nasc">Carregando...</span></div>
+                    </div>
+                  </div>              
+                </div>
+              </div>          
+            </div>
+            <div class="flip-card-back">
+              <div class="back-conteudo">
+                <div class="endereco">
+                  <div class="titulo">Endereço</div>   
+                  <div class="item">Logradouro<br><span id="seu_logradouro">Carregando...</span></div>
+                  <div class="item">Nº<br><span id="seu_numero">Carregando...</span></div>
+                  <div class="item">Bairro<br><span id="seu_bairro">Carregando...</span></div>
+                  <div class="item">CEP<br><span id="seu_cep">Carregando...</span></div>
+                  <div class="item">Cidade<br><span id="sua_cidade">Carregando...</span></div>
+                  <div class="item">Estado<br><span id="seu_estado">Carregando...</span></div>
+                </div>          
+              </div>    
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
 
     <div class="creditos" >
       <div class="img_creditos">
@@ -85,15 +132,16 @@
           resposta.json().then(function (resposta) {
             console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
+            console.log(resposta[0].CEP, 'auansja')
             // aqui, após registro. use os nomes
             // dos atributos que vem no JSON
             dados = {
               nome: resposta[0].nomeCliente,
               login: resposta[0].Email,
               celular: resposta[0].Celular,
-              cpf: resposta[0].cpf,
+              cpf: resposta[0].CPF,
               dataNasc: resposta[0].dataNasc,
-              cep: resposta[0].cep,
+              cep: resposta[0].CEP,
               logradouro: resposta[0].Logradouro,
               bairro: resposta[0].Bairro,
               cidade: resposta[0].Cidade,
@@ -106,6 +154,7 @@
             seu_celular.innerHTML = dados.celular
             seu_cpf.innerHTML = dados.cpf
             seu_nasc.innerHTML = dados.dataNasc
+            seu_cep.innerHTML = dados.cep
             seu_logradouro.innerHTML = dados.logradouro
             seu_bairro.innerHTML = dados.bairro
             sua_cidade.innerHTML = dados.cidade
@@ -121,6 +170,13 @@
       });
 
       
+  }
+  function toggleturn(){
+    if(document.getElementById('card').classList.contains('turn')) {
+      document.getElementById('card').classList.remove('turn');
+    } else {
+      document.getElementById('card').classList.add('turn');
+    }
   }
     
 </script>
