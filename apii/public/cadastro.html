@@ -72,7 +72,7 @@
 
             <input required type="date" name="dataNasc" id="inpu_datanasc" placeholder="Data de Nascimento">
             
-            <button  id="btn_entrar" class="botaoentrar" type="submit" value="Cadastrar">
+            <button  id="btn_entrar" class="botaoentrar" type="submit" value="Cadastrar" disabled>
                 Cadastrar
             </button>
             <div  id="senha_incorreta"></div>
@@ -192,9 +192,11 @@
         var senha2 = input_senha_check.value
         if (senha1 != senha2) {
             senha_incorreta.innerHTML = 'As senhas não coincidem'
+            btn_entrar.disabled = true
         }
         else{
             senha_incorreta.innerHTML = ' '
+            btn_entrar.disabled = false
         }
     }
     
@@ -202,9 +204,11 @@
         var senha = input_senha.value
         if (senha.length<7) {
         senha_incorreta.innerHTML = 'A senha deve ter no mínimo 8 caracteres'
+        btn_entrar.disabled = true
         }
         else{
             senha_incorreta.innerHTML = ' '
+            btn_entrar.disabled = false
         }
     }
     function cadastrar() {

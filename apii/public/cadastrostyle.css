@@ -39,10 +39,14 @@
     border: solid 1px #5428b3;
     transition: all .4s;
 }
-.botaoentrar:hover {
+.botaoentrar:hover:not(:disabled) {
     background-color: #ffffff;
     color: #673ab7;
     box-shadow: 0 0 20px 5px #673ab7;
+}
+#btn_entrar:disabled {
+    cursor: not-allowed;
+    opacity: .4;
 }
 body{
     

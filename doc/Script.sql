@@ -47,12 +47,12 @@ create table Cliente(
         ) auto_increment = 2013;
         
         insert into Premios values(null,2,1),(null,7,5),(null,17,10),(null,31,14),
-        (null,58,31),(null,112,89),(null,130,101),(null,107,76),(null,77,42);
+        (null,58,31),(null,112,89),(null,130,101),(null,107,76),(null,77,45);
         
         select * from premios;
         
-        update Premios set Ganhos = 1 where idAno = 2013;
-    
+        update Premios set Ganhos = 45 where idAno = 2021;
+	
     
    
     
