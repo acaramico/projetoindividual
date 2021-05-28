@@ -23,7 +23,7 @@ create table Cliente(
     Email varchar(45),
     Celular char(14),
     CPF char(14),
-    dataNasc date,
+    dataNasc char(10),
     senhaCliente varchar(45),
     CEP char(9) default null,
     Logradouro varchar(45),
@@ -34,9 +34,13 @@ create table Cliente(
     fkPlanos int,
     foreign key (fkPlanos) references Planos(idPlanos)
     );
+    
+    
     select * from cliente;
     select * from endereco;
 	select * from planos;
+    
+     select * from premios;
     
     insert into Planos values(null,'Mensal'),(null,'Bimestral');
     
@@ -47,11 +51,12 @@ create table Cliente(
         ) auto_increment = 2013;
         
         insert into Premios values(null,2,1),(null,7,5),(null,17,10),(null,31,14),
-        (null,58,31),(null,112,89),(null,130,101),(null,107,76),(null,77,45);
+        (null,58,31),(null,112,89),(null,130,101),(null,107,76),(null,77,52);
         
-        select * from premios;
         
-        update Premios set Ganhos = 45 where idAno = 2021;
+       
+        
+        
 	
     
    

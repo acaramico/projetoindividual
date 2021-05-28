@@ -52,7 +52,7 @@
 
             <input required id="input_email" type="email" placeholder=" E-mail" name="login">
 
-            <input required placeholder=" Logradouro" name="logradouro" type="text" id="rua" />
+            <input required placeholder=" Logradouro e complemento" name="logradouro" type="text" id="rua" />
 
             <input required id="input_tel" placeholder=" Telefone celular"name="celular" onkeypress="$(this).mask('(00)00000-0000')">
                 
@@ -70,13 +70,14 @@
         
             <input required type="password" id="input_senha_check" placeholder=" Repita sua senha" onchange="validar_senha()">
 
-            <input required type="date" name="dataNasc" id="inpu_datanasc" placeholder="Data de Nascimento">
+            <input required onkeypress="$(this).mask('00/00/0000')" name="dataNasc" id="inpu_datanasc" placeholder=" Data de Nascimento">
             
             <button  id="btn_entrar" class="botaoentrar" type="submit" value="Cadastrar" disabled>
                 Cadastrar
             </button>
             <div  id="senha_incorreta"></div>
-            <div style="margin-bottom: -33px;margin-right: 326px;" id="div_erro" class="div_erro">
+            <div style="margin-bottom: -33px;margin-right: 326px; font-size: 18px;
+            text-shadow: 0 0 6px #ff4e4e;" id="div_erro" class="div_erro">
             </div>
             
         </form>
