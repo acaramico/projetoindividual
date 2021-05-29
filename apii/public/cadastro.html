@@ -43,7 +43,7 @@
         <img src="fotos/doodle6.png" class="doodle6" id="doodle" style="display: none;">
         <div style="display: none;" id="div_mens_cep">Formato do CEP inválido</div>
         <form class="campos" id="form_cadastro" onsubmit="return cadastrar()"method="post">
-            <input required id="input_nome" placeholder=" Nome Completo"name="nome">
+            <input required id="input_nome" placeholder=" Nome Completo"name="nome" onchange="verificarnome()" >
 
             <form method="get"  action="." >
             
@@ -187,7 +187,16 @@
         limpa_formulário_cep();
     }
 };
-
+    function verificarnome(){
+        var nome = input_nome.value
+        if (!nome.match(/ /)) {
+            senha_incorreta.innerHTML = 'Insira seu nome completo'
+            btn_entrar.disabled = true
+        }else{
+            senha_incorreta.innerHTML = ' '
+            btn_entrar.disabled = false
+        }
+    }
     function validar_senha(){
         var senha1 = input_senha.value
         var senha2 = input_senha_check.value
@@ -200,6 +209,7 @@
             btn_entrar.disabled = false
         }
     }
+
     
     function validar_senha2(){
         var senha = input_senha.value
@@ -256,5 +266,7 @@
         div_erro.style.display='block';
         doodle.display = 'block'
     }
+
+    
     
 </script>

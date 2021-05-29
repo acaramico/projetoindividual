@@ -117,6 +117,7 @@ input#in_uf {
 div#senha_incorreta {
     margin: -79px 330px 0px 0px;
     text-shadow: 0 0 2px #dc3131;
+    font-size: 18px;
 }
 div#div_mens_cep {
     margin: -19px -315px -10px 1px;

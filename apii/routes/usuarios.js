@@ -246,4 +246,34 @@ router.get('/', function (req, res, next) {
 	});
 });
 
+router.post('/buscaremail/', function (req, res, next) {
+	let id = req.params.id;
+	console.log('Recuperando emails');
+
+	let instrucaoSql = `select Email from cliente`;
+	console.log(instrucaoSql);
+
+	sequelize.query(instrucaoSql, {
+		model: Usuario
+	}).then(resultado => {
+		console.log(`Encontr4dos: ${resultado.length}`);
+		console.log(`Achei: ${resultado}`);
+		res.json(resultado);
+		//return resultado
+		// if (resultado.length == 1) {
+		// 	sessoes.push(resultado[0].dataValues.login);
+		// 	console.log('sessoes: ',sessoes);
+		// 	res.json(resultado[0]);
+		// } else if (resultado.length == 0) {
+		// 	res.status(403).send('Login e/ou senha inválido(s)');
+		// } else {
+		// 	res.status(403).send('Mais de um usuário com o mesmo login e senha!');
+		// }
+
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
 module.exports = router;
